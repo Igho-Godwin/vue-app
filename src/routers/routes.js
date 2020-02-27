@@ -11,10 +11,4 @@ export const routes = [{
     meta: {layout: 'dashboard'},
     component: () => import("@/components/pages/Dashboard")
   },
-   // LAYOUTS
-   {
-    path: '/marketing',
-    meta: { layout: 'marketing' },
-    component: () => import("@/components/pages/Marketing")
-  },
 ];
