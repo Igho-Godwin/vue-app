@@ -1,17 +1,18 @@
 <template>
   <div id="app">
-    <img alt="Vue logo" src="./assets/logo.png">
-    <HelloWorld msg="Welcome to REACH for Business"/>
+    <p>"Welcome to REACH for Business"</p>
     <router-view></router-view>
+    <p>
+    <router-link to="/sign-in">Sign In</router-link>
+    <router-link to="/dashboard">Dashboard</router-link>
+    </p>
   </div>
 </template>
 
 <script>
-import HelloWorld from './components/HelloWorld.vue';
 export default {
   name: 'App',
   components: {
-    HelloWorld
   }
 }
 </script>
