@@ -1,8 +1,6 @@
 <template>
-  <div class="default-layout">
-    <main class="app-main">
+  <div>
       <slot />
-    </main>
   </div>
 </template>
 

@@ -5,28 +5,15 @@ import VueRouter from 'vue-router';
 Vue.use(VueRouter)
 
 // Layout Components
-import Default from "@/layout/DefaultLayout.vue";
-import Blank from "@/layout/BlankLayout.vue";
+import Default from "@/layouts/DefaultLayout.vue";
+import Blank from "@/layouts/BlankLayout.vue";
+import Dashboard from "@/layouts/DashboardLayout.vue";
+import  router  from "@/routers/router.js";
 
 Vue.component('default-layout', Default);
 Vue.component('blank-layout', Blank);
-
-const router = new VueRouter({
-  routes: [
-    { 
-      path: '/sign-in',
-      component: () => import("@/components/authentications/SignIn")
-    },
-    { 
-      path: '/',
-      component: () => import("@/components/pages/Landing")
-    },
-    { 
-      path: '/dashboard',
-      component: () => import("@/components/pages/Dashboard")
-    }
-  ]
-})
+Vue.component('dashboard-layout', Dashboard);
+Vue.component('router', router);
 
 
 Vue.config.productionTip = false
