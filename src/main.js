@@ -4,22 +4,14 @@ import VueRouter from 'vue-router';
 
 Vue.use(VueRouter)
 
-const router = new VueRouter({
-  routes: [
-    { 
-      path: '/sign-in',
-      component: () => import("@/components/authentications/SignIn")
-    },
-    { 
-      path: '/',
-      component: () => import("@/components/pages/Landing")
-    },
-    { 
-      path: '/dashboard',
-      component: () => import("@/components/pages/Dashboard")
-    }
-  ]
-})
+// Layout Components
+import Dashboard from "@/layouts/DashboardLayout.vue";
+import Auth from "@/layouts/AuthLayout.vue"
+import  router  from "@/routers/router.js";
+
+Vue.component('dashboard', Dashboard);
+Vue.component('auth', Auth);
+
 
 
 Vue.config.productionTip = false
