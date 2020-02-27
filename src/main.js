@@ -8,15 +8,15 @@ const router = new VueRouter({
   routes: [
     { 
       path: '/sign-in',
-      component: () => import("@/components/home/Sign")
+      component: () => import("@/components/authentications/Sign")
     },
     { 
       path: '/',
-      component: () => import("@/components/nav-element/Landing")
+      component: () => import("@/components/pages/Landing")
     },
     { 
       path: '/dashboard',
-      component: () => import("@/components/nav-element/Dashboard")
+      component: () => import("@/components/pages/Dashboard")
     }
   ]
 })
