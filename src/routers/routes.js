@@ -7,10 +7,6 @@ export const routes = [{
   },
   //PAGES
   { 
-    path: '/',
-    component: () => import("@/components/pages/Landing")
-  },
-  { 
     path: '/dashboard',
     meta: {layout: 'dashboard'},
     component: () => import("@/components/pages/Dashboard")
