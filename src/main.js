@@ -9,7 +9,7 @@ import Dashboard from "@/layouts/DashboardLayout.vue";
 import Auth from "@/layouts/AuthLayout.vue"
 import  router  from "@/routers/router.js";
 
-Vue.component('dashboard-layout', Dashboard);
+Vue.component('dashboard', Dashboard);
 Vue.component('auth', Auth);
 
 
