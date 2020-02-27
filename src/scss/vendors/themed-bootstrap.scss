@@ -1,0 +1,36 @@
+// Required for Bootstrap
+@import "../../../node_modules/bootstrap/scss/functions";
+@import "../../../node_modules/bootstrap/scss/variables";
+@import "../../../node_modules/bootstrap/scss/mixins";
+
+// Overrides
+@import "../abstracts/variables";
+
+$theme-colors: ();
+$theme-colors: map-merge((
+  "red": $red,
+  "purple": $purple,
+  "yellow": $yellow,
+  "blue": $blue,
+  "green": $green,
+  "black":  $black,
+  "steel": $steel,
+  "slate": $slate,
+  "silver": $silver,
+  "smoke": $smoke,
+  "dark-smoke": $dark-smoke,
+  "extra-dark-smoke": $extra-dark-smoke,
+  "snow": $snow,
+  "dark-snow": $dark-snow,
+  "extra-dark-snow": $extra-dark-smoke,
+  "white": $white
+), $theme-colors);
+
+
+// Optional Components
+@import "../../../node_modules/bootstrap/scss/reboot";
+@import "../../../node_modules/bootstrap/scss/grid";
+@import "../../../node_modules/bootstrap/scss/utilities";
+@import "../../../node_modules/bootstrap/scss/buttons";
+@import "../../../node_modules/bootstrap/scss/close";
+@import "../../../node_modules/bootstrap/scss/images";
