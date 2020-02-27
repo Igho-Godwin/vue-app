@@ -2,7 +2,7 @@
 export const routes = [{
   //authentications
     path: '/sign-in',
-    component: () => import("@/components/authentications/Sign")
+    component: () => import("@/components/authentications/SignIn")
   },
   //pages
   { 

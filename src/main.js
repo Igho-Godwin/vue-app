@@ -8,7 +8,7 @@ const router = new VueRouter({
   routes: [
     { 
       path: '/sign-in',
-      component: () => import("@/components/authentications/Sign")
+      component: () => import("@/components/authentications/SignIn")
     },
     { 
       path: '/',
