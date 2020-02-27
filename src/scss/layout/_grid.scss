@@ -1,0 +1,54 @@
+@import "../abstracts/variables";
+@import "../abstracts/mixins";
+
+*{
+  box-sizing: border-box;
+}
+
+.fixed-wrap{
+  margin-left: auto;
+  box-sizing: content-box;
+  margin-right: auto;
+  max-width: 1200px;
+  padding: {
+    left: 20px;
+    right: 20px;
+  };
+  @include breakpoint-min(md){
+    padding: {
+      left: 40px;
+      right: 40px;
+    };
+  }
+}
+
+.l-grid{
+  display: grid;
+  grid-gap: 1.25rem;
+  &.l-grid--2-md{
+    @include breakpoint-min(md){
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  &.l-grid--2-lg {
+    @include breakpoint-min(lg) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+  &.no-gap{
+    grid-gap: 0;
+  }
+  &.gap-2x-md{
+    @include breakpoint-min(md){
+      grid-gap: 2.5rem;
+    }
+  }
+  &.gap-2x-lg{
+    @include breakpoint-min(lg){
+      grid-gap: 3rem;
+    }
+  }
+  &.align-center{
+    align-items: center;
+  }
+}
