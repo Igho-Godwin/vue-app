@@ -1,12 +1,7 @@
 <template>
   <div id="app">
     <component :is="layout">
-    <p>"Welcome to REACH for Business"</p>
     <router-view></router-view>
-    <p>
-    <router-link to="/sign-in">Sign In</router-link>
-    <router-link to="/dashboard">Dashboard</router-link>
-    </p>
     </component>
   </div>
 </template>
