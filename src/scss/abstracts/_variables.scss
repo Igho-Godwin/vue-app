@@ -46,3 +46,19 @@ $fontSize-xl: 1.25rem;
 $fontSize-lg: 1rem;
 $fontSize-r: .875rem;
 $fontSize-s: .75rem;
+
+.text-xxlarge {
+  font-size: $fontSize-xxl;
+}
+.text-xlarge {
+  font-size: $fontSize-xl;
+}
+.text-large {
+  font-size: $fontSize-lg;
+}
+.text-regular {
+  font-size: $fontSize-r;
+}
+.text-small {
+  font-size: $fontSize-s;
+}
