@@ -13,7 +13,7 @@
                 placeholder="Email Address" required>
             </div>
             <div class="form-group">
-              <input type="password" class="form-control text-regular" id="exampleInputPassword1" placeholder="Password" required>
+              <input type="password" class="form-control text-regular" id="password" placeholder="Password" required>
             </div>
             <button type="submit" class="btn btn-blue btn-block">Login to your Account</button>
           </form>
