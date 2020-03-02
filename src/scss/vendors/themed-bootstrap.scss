@@ -26,15 +26,18 @@ $theme-colors: map-merge((
 
 // Input Overrides
 $input-height: 3rem;
-$input-font-size: .875rem;
+$input-font-size: $fontSize-r;
 $input-line-height: 1.25rem;
 $input-padding-x: 1rem;
 $input-padding-y: .875rem;
 $input-color: $main-text;
 
+// Form Overrides
+$form-group-margin-bottom: 1.25rem;
+
 // Button Overrides
 $btn-font-weight: $bold;
-$btn-font-size: $font-size-lg;
+$btn-font-size: $fontSize-lg;
 $btn-line-height: 1.25;
 $btn-padding-x: 2rem;
 $btn-padding-y: 1rem;
