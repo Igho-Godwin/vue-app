@@ -15,5 +15,20 @@ export const routes = [{
     path: '/sign-up',
     component: () => import("@/components/authentications/SignUp"),
     meta: {layout: 'auth'}
+  },
+  {
+    path: '/onboarding-add-info',
+    component: () => import("@/components/onboardings/OnboardingAddInfo"),
+    meta: {layout: 'onboarding'}
+  },
+  {
+    path: '/onboarding-upload-logo',
+    component: () => import("@/components/onboardings/OnboardingUploadLogo"),
+    meta: {layout: 'onboarding'}
+  },
+  {
+    path: '/onboarding-welcome',
+    component: () => import("@/components/onboardings/OnboardingWelcome"),
+    meta: {layout: 'onboarding'}
   }
 ];
