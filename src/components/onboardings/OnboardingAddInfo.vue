@@ -59,7 +59,7 @@
     top: 9rem;
     padding: 2rem 1rem;
     color: $main-text;
-
+    border-radius: 0.25rem;
     @include breakpoint-min(lg) {
       top: 11.25rem;
       max-width: 22.5rem;
