@@ -1,7 +1,7 @@
 
 export const routes = [{
   //authentications
-    path: '/',
+    path: '/sign-in',
     component: () => import("@/components/authentications/SignIn"),
     meta: { layout: "auth" }
   },

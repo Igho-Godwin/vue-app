@@ -5,7 +5,7 @@
         <div class="col-md-4 sign-in__form">
           <div class="text-start mb-5">
             <h2>Create your Account</h2>
-            <p>Already have an account? <router-link to="/">Sign In</router-link>
+            <p>Already have an account? <router-link to="/sign-in">Sign In</router-link>
             </p>
           </div>
           <form>
