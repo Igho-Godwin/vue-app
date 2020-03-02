@@ -6,7 +6,7 @@ $red: #CF3E4C;
 $yellow: #FF9F00;
 $purple: #9700C8;
 $main-text: #3e4149;
-$secondary-text-color: #686C73;
+$secondary-text: #686C73;
 $dark-smoke: #CDCACE;
 $smoke: #686c73;
 $dark-snow: #F3F2F4;
@@ -37,7 +37,6 @@ $system-font: -apple-system,BlinkMacSystemFont,"Segoe UI",Roboto,"Helvetica Neue
 $regular: 400;
 $semi-bold: 600;
 $bold: 700;
-$extra-bold: 800;
 
 
 //Font Sizes
@@ -46,19 +45,3 @@ $fontSize-xl: 1.25rem;
 $fontSize-lg: 1rem;
 $fontSize-r: .875rem;
 $fontSize-s: .75rem;
-
-.text-xxlarge {
-  font-size: $fontSize-xxl;
-}
-.text-xlarge {
-  font-size: $fontSize-xl;
-}
-.text-large {
-  font-size: $fontSize-lg;
-}
-.text-regular {
-  font-size: $fontSize-r;
-}
-.text-small {
-  font-size: $fontSize-s;
-}
