@@ -57,13 +57,13 @@
     background: $white;
     position: absolute;
     top: 9rem;
-    padding: 1rem 1rem 2rem 1rem;
+    padding: 2rem 1rem;
     color: $main-text;
 
     @include breakpoint-min(lg) {
       top: 11.25rem;
       max-width: 22.5rem;
-      padding: 2rem 1.5rem 2rem 1.5rem;
+      padding: 2rem 1.5rem;
     }
   }
 </style>
