@@ -9,10 +9,12 @@ import Dashboard from "@/layouts/DashboardLayout.vue";
 import Auth from "@/layouts/AuthLayout.vue";
 import  router  from "@/routers/router.js";
 import Onboarding from "@/layouts/OnboardingLayout.vue";
+import Setting from "@/layouts/SettingLayout.vue";
 
 Vue.component('dashboard', Dashboard);
 Vue.component('auth', Auth);
 Vue.component('onboarding', Onboarding);
+Vue.component('setting', Setting);
 
 
 
