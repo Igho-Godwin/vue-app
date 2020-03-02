@@ -8,21 +8,21 @@
 
 $theme-colors: ();
 $theme-colors: map-merge((
-  "red": $red,
-  "purple": $purple,
-  "yellow": $yellow,
   "blue": $blue,
   "green": $green,
-  "black":  $black,
-  "steel": $steel,
-  "slate": $slate,
-  "silver": $silver,
-  "smoke": $smoke,
+  "red": $red,
+  "yellow": $yellow,
+  "purple": $purple,
+  "main-text": $main-text,
+  "secondary-text-color": $secondary-text-color,
   "dark-smoke": $dark-smoke,
-  "extra-dark-smoke": $extra-dark-smoke,
+  "smoke": $smoke,
+  "dark-snow": $dark-snow, 
   "snow": $snow,
-  "dark-snow": $dark-snow,
-  "extra-dark-snow": $extra-dark-smoke,
+
+  "black":  $black,
+
+  
   "white": $white
 ), $theme-colors);
 
@@ -34,3 +34,5 @@ $theme-colors: map-merge((
 @import "../../../node_modules/bootstrap/scss/buttons";
 @import "../../../node_modules/bootstrap/scss/close";
 @import "../../../node_modules/bootstrap/scss/images";
+@import "../../../node_modules/bootstrap/scss/custom-forms";
+@import "../../../node_modules/bootstrap/scss/forms";

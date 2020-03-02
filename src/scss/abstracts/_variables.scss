@@ -1,27 +1,16 @@
-//==========COLOR VARIABLES==========
-
-// Brand Colors
-$purple: #9700C8;
-$red: #CF3E4C;
-$yellow: #FF9F00;
 
 // Utility Colors
 $blue: #2B7BD6;
 $green: #29B36A;
-
-// Greyscale
-$black: #1F2126;
-$steel: #3E4149;
-$slate: #686C73;
-$silver: #ADB1BC;
-
-$smoke: #E6E3E8;
-$dark-smoke: #DCD9DD;
-$extra-dark-smoke: #CDCACE;
-
-$snow: #FBF9FC;
+$red: #CF3E4C;
+$yellow: #FF9F00;
+$purple: #9700C8;
+$main-text: #3e4149;
+$secondary-text-color: #686C73;
+$dark-smoke: #CDCACE;
+$smoke: #686c73;
 $dark-snow: #F3F2F4;
-$extra-dark-snow: #EBEAED;
+$snow: #686c73;
 
 //Neutral Colors
 $white: #FFF;
@@ -50,13 +39,26 @@ $semi-bold: 600;
 $bold: 700;
 $extra-bold: 800;
 
+
 //Font Sizes
-$fontSize-xxxxl: 4rem;
-$fontSize-xxxl: 3rem;
-$fontSize-xxl: 2.25rem;
-$fontSize-xl: 1.75rem;
-$fontSize-l: 1.5rem;
-$fontSize-m: 1.25rem;
-$fontSize-r: 1.125rem;
-$fontSize-s: 1rem;
-$fontSize-xs: .875rem;
+$fontSize-xxl: 1.5rem;
+$fontSize-xl: 1.25rem;
+$fontSize-lg: 1rem;
+$fontSize-r: .875rem;
+$fontSize-s: .75rem;
+
+.text-xxlarge {
+  font-size: $fontSize-xxl;
+}
+.text-xlarge {
+  font-size: $fontSize-xl;
+}
+.text-large {
+  font-size: $fontSize-lg;
+}
+.text-regular {
+  font-size: $fontSize-r;
+}
+.text-small {
+  font-size: $fontSize-s;
+}
