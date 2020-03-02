@@ -30,5 +30,10 @@ export const routes = [{
     path: '/onboarding-welcome',
     component: () => import("@/components/onboardings/OnboardingWelcome"),
     meta: {layout: 'onboarding'}
+  },
+  {
+    path: '/bank-information',
+    component: () => import("@/components/settings/BankInformation"),
+    meta: {layout: 'setting'}
   }
 ];
