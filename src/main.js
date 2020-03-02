@@ -1,22 +1,23 @@
 import Vue from 'vue'
 import App from './App.vue'
 import VueRouter from 'vue-router';
+import  router  from "@/routers/router.js";
 
-Vue.use(VueRouter)
 
 // Layout Components
-import Dashboard from "@/layouts/DashboardLayout.vue";
-import Auth from "@/layouts/AuthLayout.vue";
-import  router  from "@/routers/router.js";
+import DashboardLayout from "@/layouts/DashboardLayout.vue";
+import DefaultLayout from "@/layouts/DefaultLayout.vue";
 import Onboarding from "@/layouts/OnboardingLayout.vue";
 import Setting from "@/layouts/SettingLayout.vue";
 
-Vue.component('dashboard', Dashboard);
-Vue.component('auth', Auth);
+
+Vue.component('dashboard', DashboardLayout);
+Vue.component('default', DefaultLayout);
 Vue.component('onboarding', Onboarding);
 Vue.component('setting', Setting);
 
 
+Vue.use(VueRouter)
 
 Vue.config.productionTip = false
 
