@@ -14,6 +14,6 @@ export const routes = [{
   {
     path: '/sign-up',
     component: () => import("@/components/authentications/SignUp"),
-    meta: {layout: 'sign-up'}
+    meta: {layout: 'auth'}
   }
 ];
