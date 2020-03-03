@@ -12,7 +12,7 @@
     name: 'App',
     computed: {
       layout() {
-        return (this.$route.meta.layout ) ;
+        return (this.$route.meta.layout || 'default' ) ;
       }
     }
   }

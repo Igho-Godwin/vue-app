@@ -1,39 +1,28 @@
-
-export const routes = [{
-  //authentications
+export const routes = [
+  //AUTHENTICATION
+  {
     path: '/sign-in',
-    component: () => import("@/components/authentications/SignIn"),
-    meta: { layout: "auth" }
-  },
-  //PAGES
-  { 
-    path: '/dashboard',
-    meta: {layout: 'dashboard'},
-    component: () => import("@/components/pages/Dashboard")
+    component: () => import("@/pages/authentication/SignIn")
   },
   {
     path: '/sign-up',
-    component: () => import("@/components/authentications/SignUp"),
-    meta: {layout: 'auth'}
+    component: () => import("@/pages/authentication/SignUp")
+  },
+  //ONBOARDING
+  {
+    path: '/onboarding/1',
+    component: () => import("@/pages/onboarding/Step1")
   },
   {
-    path: '/onboarding-add-info',
-    component: () => import("@/components/onboardings/OnboardingAddInfo"),
-    meta: {layout: 'onboarding'}
+    path: '/onboarding/2',
+    component: () => import("@/pages/onboarding/Step2")
   },
   {
-    path: '/onboarding-upload-logo',
-    component: () => import("@/components/onboardings/OnboardingUploadLogo"),
-    meta: {layout: 'onboarding'}
-  },
-  {
-    path: '/onboarding-welcome',
-    component: () => import("@/components/onboardings/OnboardingWelcome"),
-    meta: {layout: 'onboarding'}
+    path: '/onboarding/3',
+    component: () => import("@/pages/onboarding/Step3")
   },
   {
     path: '/bank-information',
-    component: () => import("@/components/settings/BankInformation"),
-    meta: {layout: 'setting'}
+    component: () => import("@/components/settings/BankInformation")
   }
 ];
