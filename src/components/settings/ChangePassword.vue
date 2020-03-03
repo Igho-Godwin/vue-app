@@ -1,6 +1,9 @@
 <template>
   <div>
-    <Card header="Change Password">
+    <Card>
+      <div slot="card-header">
+        <h3>Change Password</h3>
+      </div>
       <div slot="card-body">
         <form>
           <div class="form-row mb-3">
