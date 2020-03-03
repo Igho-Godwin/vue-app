@@ -22,7 +22,7 @@ export const routes = [
     component: () => import("@/pages/onboarding/Step3")
   },
   {
-    path: '/bank-information',
-    component: () => import("@/components/settings/BankInformation")
+    path: '/all-cards',
+    component: () => import("@/components/settings/AccountSettings")
   }
 ];
