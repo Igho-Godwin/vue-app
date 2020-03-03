@@ -5,11 +5,11 @@
         <p>We recommend you use a square logo with dimensions 128px by 128px for best results.</p>
         <form>
           <div class="form-row align-items-center justify-content-start">
-            <div class="col-md-3 form-group mb-3">
+            <div class="col-md-6 form-group mb-3">
               <label for="businessLogo" class="logo-showcase">
                 <i class="fas fa-camera"></i></label>
             </div>
-            <div class="col-md-3 form-group mb-3">
+            <div class="col-md-6 form-group mb-3">
               <div class="custom-file image__upload">
                 <input type="file" class="custom-file-input" id="validatedCustomFile" required>
                 <label class="custom-file-label text-start" for="validatedCustomFile">Choose file...</label>
