@@ -22,6 +22,11 @@ export const routes = [
     component: () => import("@/pages/onboarding/Step3")
   },
   {
+    path: '/dashboard',
+    component: () => import("@/pages/Dashboard"),
+    meta: { layout: 'dashboard' }
+  },
+  {
     path: '/bank-information',
     component: () => import("@/components/settings/BankInformation")
   }
