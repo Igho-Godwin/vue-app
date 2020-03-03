@@ -158,11 +158,4 @@
   }
 
 
-  .text-start {
-    text-align: start;
-  }
-
-  .text-center {
-    text-align: center;
-  }
 </style>
