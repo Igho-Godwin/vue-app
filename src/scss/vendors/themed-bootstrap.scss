@@ -13,8 +13,8 @@ $theme-colors: map-merge((
   "red": $red,
   "yellow": $yellow,
   "purple": $purple,
-  "main-text": $main-text,
-  "secondary-text": $secondary-text,
+  "black": $black,
+  "grey": $grey,
   "dark-smoke": $dark-smoke,
   "smoke": $smoke,
   "dark-snow": $dark-snow, 
@@ -51,3 +51,4 @@ $btn-padding-y: 1rem;
 @import "../../../node_modules/bootstrap/scss/buttons";
 @import "../../../node_modules/bootstrap/scss/images";
 @import "../../../node_modules/bootstrap/scss/forms";
+@import "../../../node_modules/bootstrap/scss/custom-forms";
