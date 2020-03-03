@@ -1,6 +1,9 @@
 <template>
   <div>
-    <Card header="Account Settings">
+    <Card>
+      <div slot="card-header">
+        <h3>Account Settings</h3>
+      </div>
       <div slot="card-body">
         <form>
           <div class="form-row mb-3">
