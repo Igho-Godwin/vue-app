@@ -1,6 +1,8 @@
 <template>
   <div class="card">
-    <h3 class="card-header">{{header}}</h3>
+    <div class="card-header">
+    <slot name="card-header" />
+    </div>
     <div class="card-body">
       <slot name="card-body" />
     </div>
