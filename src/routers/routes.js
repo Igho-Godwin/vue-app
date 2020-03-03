@@ -23,6 +23,6 @@ export const routes = [
   },
   {
     path: '/all-cards',
-    component: () => import("@/components/settings/AccountSettings")
+    component: () => import("@/pages/AllCards")
   }
 ];
