@@ -1,6 +1,9 @@
 <template>
   <div>
-    <Card header="Company Information">
+    <Card>
+      <div slot="card-header">
+        <h3>Company Information</h3>
+      </div>
       <div slot="card-body">
         <form>
           <div class="form-row mb-3">
