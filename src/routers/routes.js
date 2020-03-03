@@ -23,9 +23,6 @@ export const routes = [
   },
   {
     path: '/bank-information',
-    component: () => import("@/components/settings/BankInformation"),
-    meta: {
-      layout: 'setting'
-    }
+    component: () => import("@/components/settings/BankInformation")
   }
 ];
