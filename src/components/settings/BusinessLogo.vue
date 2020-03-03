@@ -1,6 +1,9 @@
 <template>
   <div>
-    <Card header="Business Logo">
+    <Card>
+      <div slot="card-header">
+        <h3>Business Logo</h3>
+      </div>
       <div slot="card-body">
         <p>We recommend you use a square logo with dimensions 128px by 128px for best results.</p>
         <form>
