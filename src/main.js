@@ -6,6 +6,9 @@ import router from "@/routers/router.js";
   // Default Layout
   import DefaultLayout from "@/layouts/DefaultLayout.vue";
   Vue.component('default', DefaultLayout);
+  // Dashboard Layout
+  import DashboardLayout from "@/layouts/DashboardLayout.vue";
+  Vue.component("dashboard", DashboardLayout);
 
 Vue.config.productionTip = false
 
