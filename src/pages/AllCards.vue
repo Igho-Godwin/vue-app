@@ -54,8 +54,8 @@
   import AllLocations from "@/components/settings/AllLocations";
   import AddStore from "@/components/settings/AddStore";
   import AddStaff from "@/components/settings/AddStaff";
-  import TransactionsAdmin from "@/components/settings/TransactionsAdmin";
-  import TransactionsStaff from "@/components/settings/TransactionsStaff";
+  import TransactionsAdmin from "@/components/checkout/TransactionsAdmin";
+  import TransactionsStaff from "@/components/checkout/TransactionsStaff";
   export default {
     components: {
       AccountSettings,
