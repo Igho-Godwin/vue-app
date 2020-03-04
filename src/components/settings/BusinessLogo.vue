@@ -1,10 +1,10 @@
 <template>
   <div>
     <Card>
-      <div slot="card-header">
+      <div slot="card-header" class="card-header">
         <h3>Business Logo</h3>
       </div>
-      <div slot="card-body">
+      <div slot="card-body" class="card-body">
         <p>We recommend you use a square logo with dimensions 128px by 128px for best results.</p>
         <form>
           <div class="form-row align-items-center justify-content-start">

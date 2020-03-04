@@ -1,7 +1,7 @@
 <template>
   <div class="dashboard-layout">
-    <Sidebar userName="Mary Ekpe" companyName="Konga.com" :activeSidebar="isSidebarActive" />
-    <Header @openSidebar="openSidebar()" />
+    <Sidebar userName="Mary Ekpe" companyName="Konga.com" :activeSidebar="isSidebarActive" :activeNav="headerTitle" />
+    <Header :title="headerTitle" @openSidebar="openSidebar()" />
     <main class="dashboard-main">
       <div class="container-fluid">
         <slot />
@@ -32,6 +32,11 @@
       },
       closeSidebar() {
         this.isSidebarActive = false;
+      }
+    },
+    computed: {
+      headerTitle() {
+        return (this.$route.meta.headerTitle)
       }
     }
   }

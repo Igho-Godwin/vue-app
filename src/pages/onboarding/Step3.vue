@@ -1,7 +1,7 @@
 <template>
   <Onboarding progress="Step 3 of 3" title="Upload Business Logo">
     <Card>
-      <div slot="card-body">
+      <div slot="card-body" class="card-body">
         <p class="text-grey text-center">We recommend you use a square logo with dimensions 128px by 128px for best results.</p>
         <form>
           <label for="businessLogo" class="logo-showcase">

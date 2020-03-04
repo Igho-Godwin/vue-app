@@ -1,7 +1,7 @@
 <template>
   <Onboarding progress="Step 2 of 3" title="Add Company's Information">
     <Card>
-      <div slot="card-body">
+      <div slot="card-body" class="card-body">
         <form>
           <div class="form-group">
             <label for="businessName" class="caption">CAC Business Name</label>
