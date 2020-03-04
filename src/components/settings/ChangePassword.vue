@@ -1,10 +1,10 @@
 <template>
   <div>
     <Card>
-      <div slot="card-header">
+      <div slot="card-header" class="card-header">
         <h3>Change Password</h3>
       </div>
-      <div slot="card-body">
+      <div slot="card-body" class="card-body">
         <form>
           <div class="form-row mb-3">
             <label for="oldPassword" class="caption">OLD PASSWORD</label>

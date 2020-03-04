@@ -1,11 +1,11 @@
 <template>
   <div>
     <Card>
-      <div slot="card-header">
-            <h3>Recent Transactions</h3>
+      <div slot="card-header" class="card-header">
+        <h3>Recent Transactions</h3>
       </div>
-      <div slot="card-body">
-        <table class="table card-body__table">
+      <div slot="card-body" class="card-body">
+        <table class="table card-body__table table-responsive">
           <thead class="bg-snow">
             <tr>
               <th scope="col" class="caption">REACH USER ID</th>

@@ -1,7 +1,7 @@
 <template>
   <div>
     <Card>
-      <div slot="card-header">
+      <div slot="card-header" class="card-header">
         <div class="form-row align-items-center d-flex">
           <div class="col-md-7 form-group mb-3">
             <h3>All Staff</h3>
@@ -11,7 +11,7 @@
           </div>
         </div>
       </div>
-      <div slot="card-body">
+      <div slot="card-body" class="card-body">
         <table class="table card-body__table">
           <thead class="bg-snow">
             <tr>

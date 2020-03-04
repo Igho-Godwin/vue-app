@@ -1,10 +1,10 @@
 <template>
   <div>
     <Card>
-      <div slot="card-header">
+      <div slot="card-header" class="card-header">
         <h3>Add Staff</h3>
       </div>
-      <div slot="card-body">
+      <div slot="card-body" class="card-body">
         <form>
           <div class="form-row">
             <div class="col-md-6 form-group mb-3">
