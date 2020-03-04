@@ -1,5 +1,3 @@
 <template>
-  <div>
-    Dashboard Page Lorem ipsum dolor sit amet consectetur adipisicing elit. Perferendis ea veniam aliquam fugiat at nam commodi tempora ipsum voluptate laborum nesciunt eum ducimus quo culpa beatae expedita cum nulla, labore in eaque molestias iusto porro soluta! Iste, quis! Velit assumenda accusantium, veritatis et commodi vitae non molestiae dolorem inventore! Voluptatibus asperiores possimus veritatis perferendis voluptates eveniet cumque excepturi eligendi, explicabo dolores sunt tenetur voluptas, nobis cum. Velit officia voluptas libero quia rem qui esse facere eos dolorem voluptates eaque obcaecati veniam exercitationem, quaerat temporibus nobis, delectus illo, tenetur aut distinctio nesciunt nihil. Error perspiciatis temporibus sapiente expedita, a quibusdam ipsum!
-  </div>
+  <div>This is the dashboard</div>
 </template>

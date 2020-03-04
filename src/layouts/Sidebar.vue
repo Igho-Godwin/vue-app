@@ -1,5 +1,5 @@
 <template>
-  <div class="sidebar">
+  <div class="dashboard-sidebar" :class="(activeSidebar) ? 'dashboard-sidebar--active' : '' ">
     <div class="sidebar-header">
       <router-link to="/" class="sidebar-header__logo">
         <img src="@/assets/reach-business-logo.svg" alt="REACH for Business">
@@ -76,7 +76,8 @@
     props: {
       userName: String,
       companyName: String,
-      companyLogo: String
+      companyLogo: String,
+      activeSidebar: Boolean
     }
   }
 </script>
@@ -85,29 +86,26 @@
   @import "@/scss/abstracts/_variables.scss";
   @import "@/scss/abstracts/_mixins.scss";
 
-  .sidebar {
+  .dashboard-sidebar {
     display: flex;
     flex-direction: column;
     position: fixed;
+    left: -100%;
+    top: 0;
     width: 100%;
     max-width: 17rem;
     height: 100vh;
     background: $white;
+    z-index: 100;
+    transition: .5s ease-in-out;
+    &.dashboard-sidebar--active {
+      left: 0;
+    }
   }
   .sidebar-header {
     position: relative;
-    padding: .75rem 1.5rem;
+    padding: .875rem 1.5rem;
     border-bottom: 1px solid $smoke;
-    margin-top: .25rem;
-    &::before {
-      content: '';
-      position: absolute;
-      top: -.25rem;
-      left: 0;
-      height: .25rem;
-      width: 100%;
-      background: $brand-gradient;
-    }
   }
   .sidebar-header__logo {
     display: inline-block;
@@ -192,11 +190,12 @@
 
   // DESKTOP SIDEBAR
   @include breakpoint-min(lg) {
-    .sidebar {
+    .dashboard-sidebar {
       border-right: 1px solid $smoke;
+      left: 0;
     }
     .sidebar-header {
-      padding: 1.75rem;
+      padding: 1.625rem;
       margin: unset;
       &::before {
         content: none;
