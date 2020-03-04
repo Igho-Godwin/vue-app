@@ -5,7 +5,7 @@
     </button>
     <div class="dashboard-header__content">
       <div class="container-fluid">
-        <h3 class="dashboard-header__title">Heading</h3>
+        <h3 class="dashboard-header__title"> {{title}} </h3>
       </div>
     </div>
   

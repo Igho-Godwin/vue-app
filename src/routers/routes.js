@@ -21,10 +21,49 @@ export const routes = [
     path: '/onboarding/3',
     component: () => import("@/pages/onboarding/Step3")
   },
+
+
+  // SETTINGS
+  {
+    path: '/settings/checkout',
+    component: () => import("@/pages/settings/CheckoutSetting"),
+    meta: { 
+      layout: 'dashboard',
+      headerTitle: 'Settings'
+    }
+  },
+  {
+    path: '/settings/organisation',
+    component: () => import("@/pages/settings/OrganisationSetting"),
+    meta: { 
+      layout: 'dashboard',
+      headerTitle: 'Settings'
+    }
+  },
+  {
+    path: '/settings/account',
+    component: () => import("@/pages/settings/AccountSetting"),
+    meta: { 
+      layout: 'dashboard',
+      headerTitle: 'Settings'
+    }
+  },
+  {
+    path: '/settings/staff-location',
+    component: () => import("@/pages/settings/StaffLocationSetting"),
+    meta: { 
+      layout: 'dashboard',
+      headerTitle: 'Settings'
+    }
+  },
+
   {
     path: '/dashboard',
     component: () => import("@/pages/Dashboard"),
-    meta: { layout: 'dashboard' }
+    meta: { 
+      layout: 'dashboard' ,
+      headerTitle: 'Dashboard'
+    }
   },
   {
     path: '/all-cards',

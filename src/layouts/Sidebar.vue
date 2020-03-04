@@ -6,12 +6,12 @@
       </router-link>
     </div>
     <nav class="sidebar-nav">
-      <router-link v-for="link in navLinks" :key="link.id" :to="link.url" class="sidebar-nav__link" :class="(link.active) ? 'sidebar-nav__link--active' : '' ">
+      <a v-for="link in navLinks" :key="link.id" :href="link.url" class="sidebar-nav__link" :class="(link.active) ? 'sidebar-nav__link--active' : '' ">
         <div class="sidebar-nav__link-icon">
           <img :src="require('@/assets/icons/' + link.icon + '.svg' )">
         </div>
         <span class="sidebar-nav__link-name">{{link.name}}</span>
-      </router-link>
+      </a>
     </nav>
     <div class="sidebar-footer">
       <div class="company-logo">
@@ -38,7 +38,7 @@
             name: 'Dashboard',
             url: '/dashboard',
             icon: 'home',
-            active: true
+            active: false
           },
           {
             name: 'Checkout',
@@ -66,7 +66,7 @@
           },
           {
             name: 'Settings',
-            url: '/settings',
+            url: '/settings/checkout',
             icon: 'settings',
             active: false
           },
@@ -77,7 +77,20 @@
       userName: String,
       companyName: String,
       companyLogo: String,
-      activeSidebar: Boolean
+      activeSidebar: Boolean,
+      activeNav: String
+    },
+    methods: {
+      updateActiveNavClass() {
+        if ( this.activeNav === "Dashboard" ) {
+          this.navLinks[0].active = true
+        } else if ( this.activeNav === "Settings" ) {
+          this.navLinks[5].active = true
+        }
+      }
+    },
+    mounted() {
+      this.updateActiveNavClass()
     }
   }
 </script>
