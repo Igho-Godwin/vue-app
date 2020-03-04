@@ -1,11 +1,7 @@
 <template>
   <div class="card">
-    <div class="card-header">
     <slot name="card-header" />
-    </div>
-    <div class="card-body">
-      <slot name="card-body" />
-    </div>
+    <slot name="card-body" />
   </div>
 </template>
 
@@ -17,21 +13,24 @@
 </script>
 
 <style lang="scss" scoped>
-@import "@/scss/abstracts/_variables.scss";
-@import "@/scss/abstracts/_mixins.scss";
+  @import "@/scss/abstracts/_variables.scss";
+  @import "@/scss/abstracts/_mixins.scss";
+
   .card {
     background: $white;
     border: 1px solid $smoke;
     border-radius: .25rem;
+    margin-bottom: 1rem;
+    @include breakpoint-min(lg) {
+      margin-bottom: 2rem;
+    }
   }
-
   .card-header {
     padding: 1.5rem 1rem 0 1rem;
-  @include breakpoint-min(lg) {
-    padding: 2.25rem 1.5rem 0 1.5rem;
+    @include breakpoint-min(lg) {
+      padding: 2.25rem 1.5rem 0 1.5rem;
+    }
   }
-  }
-
   .card-body {
     padding: 1.25rem 1rem;
   }
