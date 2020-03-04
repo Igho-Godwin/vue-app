@@ -27,7 +27,7 @@ export const routes = [
     meta: { layout: 'dashboard' }
   },
   {
-    path: '/bank-information',
-    component: () => import("@/components/settings/BankInformation")
+    path: '/all-cards',
+    component: () => import("@/pages/AllCards")
   }
 ];
