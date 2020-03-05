@@ -6,13 +6,13 @@
       </div>
       <div slot="card-body" class="card-body">
         <form>
-          <div class="form-row mb-3">
-            <label for="storeName" class="caption">NAME OF STORE</label>
-            <input type="text" class="form-control" id="" required>
+          <div class="form-group">
+            <label for="storeName" class="caption">Name of Store</label>
+            <input type="text" class="form-control" id="storeName" required>
           </div>
-          <div class="form-row mb-4">
-            <label for="storeAddress" class="caption">ADDRESS OF STORE</label>
-            <input type="text" class="form-control" id="" required>
+          <div class="form-group mb-5">
+            <label for="storeAddress" class="caption">Address of Store</label>
+            <input type="text" class="form-control" id="storeAddress" required>
           </div>
           <button type="submit" class="btn btn-green">Save Changes</button>
         </form>

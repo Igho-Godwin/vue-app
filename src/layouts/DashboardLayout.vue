@@ -1,7 +1,7 @@
 <template>
   <div class="dashboard-layout">
     <Sidebar userName="Mary Ekpe" companyName="Konga.com" :activeSidebar="isSidebarActive" :activeNav="headerTitle" />
-    <Header :title="headerTitle" @openSidebar="openSidebar()" />
+    <Header :title="headerTitle" @openSidebar="openSidebar()" :backNav="backNavActive" :backNavTitle="backNavTitle" :backNavUrl="backNavUrl" />
     <main class="dashboard-main">
       <slot />
     </main>
@@ -35,6 +35,15 @@
     computed: {
       headerTitle() {
         return (this.$route.meta.headerTitle)
+      },
+      backNavActive() {
+        return (this.$route.meta.backNav)
+      },
+      backNavTitle() {
+        return (this.$route.meta.backNavTitle)
+      },
+      backNavUrl() {
+        return (this.$route.meta.backNavUrl)
       }
     }
   }

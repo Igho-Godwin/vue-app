@@ -4,8 +4,16 @@
       <i class="fas fa-bars"></i>
     </button>
     <div class="dashboard-header__content">
-      <div class="container-fluid">
+      <div class="container-fluid" v-if="!backNav">
         <h3 class="dashboard-header__title"> {{title}} </h3>
+      </div>
+      <div class="container-fluid" v-else>
+        <router-link :to="backNavUrl" class="dashboard-header__link">
+          <h3 class="dashboard-header__title">
+            <i class="fas fa-arrow-left mr-3"></i>
+            {{backNavTitle}}
+          </h3>
+        </router-link>
       </div>
     </div>
   
@@ -16,7 +24,10 @@
   export default {
     name: 'dashbord-header',
     props: {
-      title: String
+      title: String,
+      backNav: Boolean,
+      backNavTitle: String,
+      backNavUrl: String
     }
   }
 </script>
@@ -35,6 +46,10 @@
   }
   .dashboard-header__title {
     margin: 0;
+  }
+  .dashboard-header__link {
+    text-decoration: none;
+    color: $main-text;
   }
   .sidebar-menu {
     display: none;
