@@ -31,9 +31,18 @@
       <div class="col-lg-8">
         <TransactionsAdmin />
       </div>  
-      <div class="col-lg-">
+      <div class="col-lg-6">
         <TransactionsStaff />
       </div>  
+      <div class="col-lg-6">
+        <GrantLoan1 />
+      </div>
+      <div class="col-lg-6">
+        <GrantLoan2 />
+      </div>
+      <div class="col-lg-6">
+        <GrantLoan3 />
+      </div>
     </div>
       
       
@@ -56,6 +65,9 @@
   import AddStaff from "@/components/settings/AddStaff";
   import TransactionsAdmin from "@/components/checkout/TransactionsAdmin";
   import TransactionsStaff from "@/components/checkout/TransactionsStaff";
+  import GrantLoan1 from "@/components/grantloan/GrantLoan1";
+  import GrantLoan2 from "@/components/grantloan/GrantLoan2";
+  import GrantLoan3 from "@/components/grantloan/GrantLoan3";
   export default {
     components: {
       AccountSettings,
@@ -69,6 +81,9 @@
       AddStaff,
       TransactionsAdmin,
       TransactionsStaff,
+      GrantLoan1,
+      GrantLoan2,
+      GrantLoan3,
     },
   }
 </script>
