@@ -13,7 +13,7 @@
           </div>
           <div>
             <h3>Boyewa Babalola</h3>
-            <p>REACH ID: 123AB</p>
+            <paragraph>REACH ID: 123AB</paragraph>
           </div>
         </div>
         <form>
