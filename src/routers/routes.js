@@ -56,6 +56,28 @@ export const routes = [
       headerTitle: 'Settings'
     }
   },
+  {
+    path: '/settings/add-staff',
+    component: () => import("@/pages/settings/AddStaff"),
+    meta: { 
+      layout: 'dashboard',
+      headerTitle: 'Settings',
+      backNav: true,
+      backNavTitle: 'Go Back',
+      backNavUrl: '/settings/staff-location'
+    }
+  },
+  {
+    path: '/settings/add-location',
+    component: () => import("@/pages/settings/AddLocation"),
+    meta: { 
+      layout: 'dashboard',
+      headerTitle: 'Settings',
+      backNav: true,
+      backNavTitle: 'Go Back',
+      backNavUrl: '/settings/staff-location'
+    }
+  },
 
   {
     path: '/dashboard',

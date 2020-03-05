@@ -4,7 +4,7 @@
       <div slot="card-header" class="card-header">
         <div class="justify-content-between align-items-center d-flex">
             <h3>All Locations</h3>
-            <button type="submit" class="btn btn-blue btn-sm">Add New Location</button>
+            <router-link to="/settings/add-location" class="btn btn-blue btn-sm">Add New Location</router-link>
         </div>
       </div>
       <div slot="card-body" class="card-body">

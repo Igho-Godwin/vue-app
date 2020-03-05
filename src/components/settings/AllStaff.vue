@@ -4,7 +4,7 @@
       <div slot="card-header" class="card-header">
         <div class="justify-content-between align-items-center d-flex">
             <h3>All Staff</h3>
-            <button type="submit" class="btn btn-blue btn-sm">Add New Staff</button>
+            <router-link to="/settings/add-staff" class="btn btn-blue btn-sm">Add New Staff</router-link>
         </div>
       </div>
       <div slot="card-body" class="card-body">

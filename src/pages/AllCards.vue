@@ -23,7 +23,7 @@
         <AllLocations />
       </div>
       <div class="col-lg-6">
-        <AddStore />
+        <AddLocation />
       </div>
       <div class="col-lg-6">
         <AddStaff />
@@ -61,7 +61,7 @@
   import CompanyInformation from "@/components/settings/CompanyInformation";
   import AllStaff from "@/components/settings/AllStaff";
   import AllLocations from "@/components/settings/AllLocations";
-  import AddStore from "@/components/settings/AddStore";
+  import AddLocation from "@/components/settings/AddLocation";
   import AddStaff from "@/components/settings/AddStaff";
   import TransactionsAdmin from "@/components/checkout/TransactionsAdmin";
   import TransactionsStaff from "@/components/checkout/TransactionsStaff";
@@ -77,7 +77,7 @@
       CompanyInformation,
       AllStaff,
       AllLocations,
-      AddStore,
+      AddLocation,
       AddStaff,
       TransactionsAdmin,
       TransactionsStaff,
