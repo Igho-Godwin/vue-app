@@ -44,10 +44,10 @@
         <GrantLoan3 />
       </div>
       <div class="col-lg-8">
-        <TransactionDetail />
+        <MerchantTransaction />
       </div>
       <div class="col-lg-8">
-        <PendingTransaction />
+        <CashierTransaction />
       </div>
     </div>
       
@@ -74,8 +74,8 @@
   import GrantLoan1 from "@/components/grantloan/GrantLoan1";
   import GrantLoan2 from "@/components/grantloan/GrantLoan2";
   import GrantLoan3 from "@/components/grantloan/GrantLoan3";
-  import TransactionDetail from "@/components/transaction/TransactionDetail";
-  import PendingTransaction from "@/components/transaction/PendingTransaction";
+  import MerchantTransaction from "@/components/transaction/Merchant'sTransaction";
+  import CashierTransaction from "@/components/transaction/Cashier'sTransaction";
   export default {
     components: {
       AccountSettings,
@@ -92,8 +92,8 @@
       GrantLoan1,
       GrantLoan2,
       GrantLoan3,
-      TransactionDetail,
-      PendingTransaction,
+      MerchantTransaction,
+      CashierTransaction,
     },
   }
 </script>

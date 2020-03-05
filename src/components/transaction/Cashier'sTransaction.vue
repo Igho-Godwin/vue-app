@@ -13,7 +13,7 @@
       <div slot="card-body" class="card-body">
         <div class="align-items-center justify-content-start d-flex mb-3 bg-rectangle p-3">
           <div class="mr-4">
-            <img src="@/assets/yung.jpg" class="img-showcase" alt="customer's picture">
+            <img src="https://source.unsplash.com/256x256/?profile,picture" class="img-showcase" alt="customer's picture">
           </div>
           <div>
             <h3>Boyewa Babalola: 123AB</h3>
@@ -45,7 +45,8 @@
   export default {
     components: {
       Card
-    }
+    },
+    data () {}
   }
 </script>
 
