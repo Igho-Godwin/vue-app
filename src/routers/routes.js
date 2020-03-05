@@ -21,7 +21,32 @@ export const routes = [
     path: '/onboarding/3',
     component: () => import("@/pages/onboarding/Step3")
   },
-
+  // DASHBOARD
+  {
+    path: '/dashboard',
+    component: () => import("@/pages/Dashboard"),
+    meta: { 
+      layout: 'dashboard' ,
+      headerTitle: 'Dashboard'
+    }
+  },
+  // CHECKOUT WITH REACH
+  {
+    path: '/checkout',
+    component: () => import("@/pages/checkout/CheckoutDashboard"),
+    meta: {
+      layout: 'dashboard',
+      headerTitle: 'Checkout with REACH'
+    }
+  },
+  {
+    path: '/checkout/create-trans/1',
+    component: () => import("@/pages/checkout/CreateTransactionStep1"),
+    meta: {
+      layout: 'dashboard',
+      headerTitle: 'Checkout with REACH'
+    }
+  },
 
   // SETTINGS
   {
@@ -76,15 +101,6 @@ export const routes = [
       backNav: true,
       backNavTitle: 'Go Back',
       backNavUrl: '/settings/staff-location'
-    }
-  },
-
-  {
-    path: '/dashboard',
-    component: () => import("@/pages/Dashboard"),
-    meta: { 
-      layout: 'dashboard' ,
-      headerTitle: 'Dashboard'
     }
   },
   {
