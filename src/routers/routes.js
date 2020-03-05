@@ -47,6 +47,22 @@ export const routes = [
       headerTitle: 'Checkout with REACH'
     }
   },
+  {
+    path: '/checkout/create-trans/2',
+    component: () => import("@/pages/checkout/CreateTransactionStep2"),
+    meta: {
+      layout: 'dashboard',
+      headerTitle: 'Checkout with REACH'
+    }
+  },
+  {
+    path: '/checkout/create-trans/3',
+    component: () => import("@/pages/checkout/CreateTransactionStep3"),
+    meta: {
+      layout: 'dashboard',
+      headerTitle: 'Checkout with REACH'
+    }
+  },
 
   // SETTINGS
   {
