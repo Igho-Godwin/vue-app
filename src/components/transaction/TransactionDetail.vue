@@ -35,7 +35,7 @@
           <p class="paragraph">Due Date</p>
           <p class="paragraph">1&nbsp;April,&nbsp;2020</p>
         </div>
-        <div slot="card-header" class="card-header pt-4 justify-content-between d-flex">
+        <div slot="card-header" class="card-header pt-4 pl-0 justify-content-between d-flex">
         <div>
           <h3 class="text-black">Item Purchased</h3>
           <p class="caption text-grey mb-2">LG WM750PB 7.5kg Top Loader Washing Machine - White</p>
