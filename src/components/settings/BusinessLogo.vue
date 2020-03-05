@@ -7,14 +7,14 @@
       <div slot="card-body" class="card-body">
         <p>We recommend you use a square logo with dimensions 128px by 128px for best results.</p>
         <form>
-          <div class="form-row align-items-center justify-content-start">
-            <div class="col-md-6 form-group mb-3">
+          <div class="row align-items-center">
+            <div class="form-group col-lg-6">
               <label for="businessLogo" class="logo-showcase">
-                <i class="fas fa-camera"></i></label>
+              <i class="fas fa-camera"></i></label>
             </div>
-            <div class="col-md-6 form-group mb-3">
+            <div class="form-group col-lg-6">
               <div class="custom-file image__upload">
-                <input type="file" class="custom-file-input" id="validatedCustomFile" required>
+                <input type="file" class="custom-file-input" id="businessLogo" required>
                 <label class="custom-file-label text-start" for="validatedCustomFile">Choose file...</label>
               </div>
             </div>

@@ -6,19 +6,19 @@
       </div>
       <div slot="card-body" class="card-body">
         <form>
-          <div class="form-row">
-            <div class="col-md-6 form-group mb-3">
+          <div class="row">
+            <div class="col-md-6 form-group">
               <label for="bankName" class="caption">BANK NAME</label>
-              <input type="text" class="form-control" id="validationCustom01" required>
+              <input type="text" class="form-control" id="bankName" required>
             </div>
-            <div class="col-md-6 form-group mb-3">
+            <div class="col-md-6 form-group">
               <label for="accountNumber" class="caption">ACCOUNT NUMBER</label>
-              <input type="text" class="form-control" id="validationCustom02" required>
+              <input type="text" class="form-control" id="accountNumber" required>
             </div>
           </div>
-          <div class="form-group mb-4">
+          <div class="form-group mb-5">
             <label for="accountName" class="caption">ACCOUNT NAME</label>
-            <input type="text" class="form-control" id="" required>
+            <input type="text" class="form-control" id="accountName" required>
           </div>
           <button type="submit" class="btn btn-green">Save Changes</button>
         </form>

@@ -3,9 +3,7 @@
     <Sidebar userName="Mary Ekpe" companyName="Konga.com" :activeSidebar="isSidebarActive" :activeNav="headerTitle" />
     <Header :title="headerTitle" @openSidebar="openSidebar()" />
     <main class="dashboard-main">
-      <div class="container-fluid">
-        <slot />
-      </div>
+      <slot />
     </main>
     <div class="sidebar-overlay" v-if="isSidebarActive" @click="closeSidebar()"></div>
   </div>
@@ -54,16 +52,12 @@
   .dashboard-main {
     background: $snow;
     flex: 1 0 auto;
-    padding: 1rem 0; 
   }
 
   // DESKTOP LAYOUT
   @include breakpoint-min(lg) {
     .dashboard-layout {
       padding-left: 17rem;
-    }
-    .dashboard-main {
-      padding: 2rem 0;
     }
   }
 

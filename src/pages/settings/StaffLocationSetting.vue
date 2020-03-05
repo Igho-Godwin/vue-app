@@ -1,11 +1,14 @@
 <template>
   <div id="staffLocationSetting">
-    <div class="row">
-      <div class="col-lg-6">
-        <AllStaff />
-      </div>
-      <div class="col-lg-6">
-        <AllLocations />
+    <SettingsNav :activeNav="4" />
+    <div class="container-fluid py-3">
+      <div class="row">
+        <div class="col-lg-6">
+          <AllStaff />
+        </div>
+        <div class="col-lg-6">
+          <AllLocations />
+        </div>
       </div>
     </div>
   </div>
@@ -14,11 +17,13 @@
 <script>
   import AllStaff from "@/components/settings/AllStaff";
   import AllLocations from "@/components/settings/AllLocations";
-  
+  import SettingsNav from "@/components/settings/SettingsNav";
+
   export default {
     components: {
       AllStaff,
-      AllLocations
+      AllLocations,
+      SettingsNav
     },
     mounted() {
       this.$emit('headerTitle')
