@@ -35,13 +35,13 @@
         <TransactionsStaff />
       </div>  
       <div class="col-lg-6">
-        <GrantLoan1 />
+        <CreateTransactionStep1 />
       </div>
       <div class="col-lg-6">
-        <GrantLoan2 />
+        <CreateTransactionStep2 />
       </div>
       <div class="col-lg-6">
-        <GrantLoan3 />
+        <CreateTransactionStep3 />
       </div>
       <div class="col-lg-8">
         <MerchantTransaction />
@@ -71,9 +71,9 @@
   import AddStaff from "@/components/settings/AddStaff";
   import TransactionsAdmin from "@/components/checkout/TransactionsAdmin";
   import TransactionsStaff from "@/components/checkout/TransactionsStaff";
-  import GrantLoan1 from "@/components/grantloan/GrantLoan1";
-  import GrantLoan2 from "@/components/grantloan/GrantLoan2";
-  import GrantLoan3 from "@/components/grantloan/GrantLoan3";
+  import CreateTransactionStep1 from "@/components/checkout/create-transactions/Step1";
+  import CreateTransactionStep2 from "@/components/checkout/create-transactions/Step2";
+  import CreateTransactionStep3 from "@/components/checkout/create-transactions/Step3";
   import MerchantTransaction from "@/components/transaction/MerchantTransaction";
   import CashierTransaction from "@/components/transaction/CashierTransaction";
   export default {
@@ -89,9 +89,9 @@
       AddStaff,
       TransactionsAdmin,
       TransactionsStaff,
-      GrantLoan1,
-      GrantLoan2,
-      GrantLoan3,
+      CreateTransactionStep1,
+      CreateTransactionStep2,
+      CreateTransactionStep3,
       MerchantTransaction,
       CashierTransaction,
     },
