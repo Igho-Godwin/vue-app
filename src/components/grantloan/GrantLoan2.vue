@@ -8,8 +8,7 @@
       <div slot="card-body" class="card-body">
         <div class="bg-dark-snow align-items-center justify-content-start d-flex mb-3">
           <div class="mr-4">
-            <label for="businessLogo" class="logo-showcase bg-dark-smoke mb-0">
-              <i class="fas fa-camera"></i></label>
+            <img src="https://source.unsplash.com/256x256/?profile,picture" class="img-showcase" alt="customer's picture">
           </div>
           <div>
             <h3>Boyewa Babalola</h3>
@@ -52,19 +51,9 @@
   }
 
 
-  .logo-showcase {
+  .img-showcase {
     display: flex;
-    align-items: center;
-    justify-content: center;
     height: 8rem;
     width: 8rem;
-    border: 1px dashed $smoke;
-    font-size: 1.5rem;
-    color: $secondary-text;
-    cursor: pointer;
-
-    &:hover {
-      border-color: $dark-smoke;
-    }
   }
 </style>
