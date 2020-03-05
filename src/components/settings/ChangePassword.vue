@@ -6,17 +6,17 @@
       </div>
       <div slot="card-body" class="card-body">
         <form>
-          <div class="form-row mb-3">
+          <div class="form-group">
             <label for="oldPassword" class="caption">OLD PASSWORD</label>
-            <input type="password" class="form-control" id="" required>
+            <input type="password" class="form-control" id="oldPassword" required>
           </div>
-          <div class="form-row mb-3">
+          <div class="form-group">
             <label for="newPassword" class="caption">NEW PASSWORD</label>
-            <input type="password" class="form-control" id="" required>
+            <input type="password" class="form-control" id="newPassword" required>
           </div>
-          <div class="form-row mb-3">
+          <div class="form-group mb-5">
             <label for="retypePassword" class="caption">RETYPE PASSWORD</label>
-            <input type="password" class="form-control" id="" required>
+            <input type="password" class="form-control" id="retypePassword" required>
           </div>
           <button type="submit" class="btn btn-red">Save Changes</button>
         </form>

@@ -6,17 +6,17 @@
       </div>
       <div slot="card-body" class="card-body">
         <form>
-          <div class="form-row mb-3">
+          <div class="form-group">
             <label for="firstName" class="caption">FIRST NAME</label>
-            <input type="text" class="form-control" id="" required>
+            <input type="text" class="form-control" id="firstName" required>
           </div>
-          <div class="form-row mb-3">
+          <div class="form-group">
             <label for="lastName" class="caption">LAST NAME</label>
-            <input type="text" class="form-control" id="" required>
+            <input type="text" class="form-control" id="lastName" required>
           </div>
-          <div class="form-row mb-3">
-            <label for="Email" class="caption">WORK EMAIL</label>
-            <input type="email" class="form-control" id="" required>
+          <div class="form-group mb-5">
+            <label for="workEmail" class="caption">WORK EMAIL</label>
+            <input type="email" class="form-control" id="workEmail" required>
           </div>
           <button type="submit" class="btn btn-green">Save Changes</button>
         </form>
