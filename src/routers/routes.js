@@ -82,7 +82,7 @@ export const routes = [
     component: () => import("@/pages/MarketInsights"),
     meta: {
       layout: 'dashboard',
-      headerTitle: 'MarketInsights'
+      headerTitle: 'Market Insights'
     }
   },
   {
