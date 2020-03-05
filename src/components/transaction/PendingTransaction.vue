@@ -6,8 +6,8 @@
           <h3 class="text-black">&#8358;10,000</h3>
           <p class="caption text-grey mb-2">LOAN AMOUNT</p>
         </div>
-        <div>
-          <caption class="text-yellow">PENDING</caption>
+        <div class="text-bounds">
+          <caption class="caption text-yellow p-0">PENDING</caption>
         </div>
       </div>
       <div slot="card-body" class="card-body">
@@ -66,4 +66,12 @@
  .bg-rectangle {
    background-color: rgba(255, 159, 0, 0.12);
  }
+
+ .text-bounds {
+    width: 4.875rem;
+    height: 1.5rem;
+    background-color: rgba(255, 159, 0, 0.12);
+    border-radius: 4px;
+    padding: 2px 8px;
+  }
 </style>

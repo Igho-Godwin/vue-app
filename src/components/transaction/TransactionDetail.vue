@@ -4,10 +4,10 @@
       <div slot="card-header" class="card-header pt-4 justify-content-between d-flex">
         <div>
           <h3 class="text-black">&#8358;10,000</h3>
-          <p class="caption text-grey mb-2">LOAN AMOUNT</p>
+          <p class="caption text-grey">LOAN AMOUNT</p>
         </div>
-        <div>
-          <caption class="text-green">CONFIRMED</caption>
+        <div class="text-bounds">
+          <caption class="caption text-green p-0">CONFIRMED</caption>
         </div>
       </div>
       <div slot="card-body" class="card-body">
@@ -71,6 +71,14 @@
     border: 1px solid $smoke;
     padding: 1rem;
     display: flex;
+  }
+
+  .text-bounds {
+    width: 6.0625rem;
+    height: 1.5rem;
+    background-color: rgba(41, 179, 106, 0.12);
+    border-radius: 4px;
+    padding: 2px 8px;
   }
 
 </style>
