@@ -68,5 +68,29 @@ export const routes = [
   {
     path: '/all-cards',
     component: () => import("@/pages/AllCards")
-  }
+  },
+  {
+    path: '/deals',
+    component: () => import("@/pages/Deals"),
+    meta: {
+      layout: 'dashboard',
+      headerTitle: 'Deals'
+    }
+  },
+  {
+    path: '/market-insights',
+    component: () => import("@/pages/MarketInsights"),
+    meta: {
+      layout: 'dashboard',
+      headerTitle: 'MarketInsights'
+    }
+  },
+  {
+    path: 'reviews',
+    component: () => import("@/pages/Reviews"),
+    meta: {
+      layout: 'dashboard',
+      headerTitle: 'Reviews'
+    }
+  },
 ];
