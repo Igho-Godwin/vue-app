@@ -74,8 +74,8 @@
   import GrantLoan1 from "@/components/grantloan/GrantLoan1";
   import GrantLoan2 from "@/components/grantloan/GrantLoan2";
   import GrantLoan3 from "@/components/grantloan/GrantLoan3";
-  import MerchantTransaction from "@/components/transaction/Merchant'sTransaction";
-  import CashierTransaction from "@/components/transaction/Cashier'sTransaction";
+  import MerchantTransaction from "@/components/transaction/MerchantTransaction";
+  import CashierTransaction from "@/components/transaction/CashierTransaction";
   export default {
     components: {
       AccountSettings,
