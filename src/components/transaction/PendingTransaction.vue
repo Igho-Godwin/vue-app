@@ -11,7 +11,7 @@
         </div>
       </div>
       <div slot="card-body" class="card-body">
-        <div class="align-items-center justify-content-start d-flex mb-3">
+        <div class="align-items-center justify-content-start d-flex mb-3 bg-rectangle p-3">
           <div class="mr-4">
             <img src="@/assets/yung.jpg" class="img-showcase" alt="customer's picture">
           </div>
@@ -63,4 +63,7 @@
     width: 4rem;
   }
 
+ .bg-rectangle {
+   background-color: rgba(255, 159, 0, 0.12);
+ }
 </style>
