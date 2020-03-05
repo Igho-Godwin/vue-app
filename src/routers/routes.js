@@ -86,7 +86,7 @@ export const routes = [
     }
   },
   {
-    path: 'reviews',
+    path: '/reviews',
     component: () => import("@/pages/Reviews"),
     meta: {
       layout: 'dashboard',
