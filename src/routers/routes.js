@@ -30,6 +30,14 @@ export const routes = [
       headerTitle: 'Dashboard'
     }
   },
+  {
+    path: '/',
+    component: () => import("@/pages/Dashboard"),
+    meta: { 
+      layout: 'dashboard' ,
+      headerTitle: 'Dashboard'
+    }
+  },
   // CHECKOUT WITH REACH
   {
     path: '/checkout',

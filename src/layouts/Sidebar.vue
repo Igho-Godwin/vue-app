@@ -84,7 +84,20 @@
       updateActiveNavClass() {
         if ( this.activeNav === "Dashboard" ) {
           this.navLinks[0].active = true
-        } else if ( this.activeNav === "Settings" ) {
+        } 
+        else if ( this.activeNav === "Checkout with REACH" ) {
+          this.navLinks[1].active = true
+        }
+        else if ( this.activeNav === "Deals" ) {
+          this.navLinks[2].active = true
+        }
+        else if ( this.activeNav === "Reviews" ) {
+          this.navLinks[3].active = true
+        }
+        else if ( this.activeNav === "Market Insights" ) {
+          this.navLinks[4].active = true
+        }
+        else if ( this.activeNav === "Settings" ) {
           this.navLinks[5].active = true
         }
       }
