@@ -3,7 +3,7 @@
     <Card>
       <div slot="card-header" class="card-header pt-4 justify-content-between d-flex">
         <div>
-          <h3 class="text-black">&#8358;10,000</h3>
+          <h3 class="text-black">&#8358;{{amount}}</h3>
           <p class="caption text-grey mb-2">LOAN AMOUNT</p>
         </div>
         <div class="text-bounds">
@@ -13,25 +13,25 @@
       <div slot="card-body" class="card-body">
         <div class="align-items-center justify-content-start d-flex mb-3 bg-rectangle p-3">
           <div class="mr-4">
-            <img src="https://source.unsplash.com/256x256/?profile,picture" class="img-showcase" alt="customer's picture">
+            <img v-bind:src="profile_image_url"  class="img-showcase" alt="customer's picture">
           </div>
           <div>
-            <h3>Boyewa Babalola: 123AB</h3>
+            <h3>{{fullName}}: 123AB</h3>
             <paragraph>This user is yet to confirm and accept terms of loan.</paragraph>
           </div>
         </div>
          <div class="card-body__content justify-content-between border-bottom-0">
           <p class="paragraph">REACH ID</p>
-          <p class="paragraph">123DA</p>
+          <p class="paragraph">{{reachId}}</p>
         </div>
         <div class="card-body__content justify-content-between">
           <p class="paragraph">Date of Transaction</p>
-          <p class="paragraph">&#8358;2&nbsp;March,&nbsp;2020</p>
+          <p class="paragraph">{{transaction_date}}</p>
         </div>
         <div slot="card-header" class="card-header pl-0 pt-4 justify-content-between d-flex">
         <div>
           <h3 class="text-black">Item Purchased</h3>
-          <p class="caption text-grey mb-2">LG WM750PB 7.5kg Top Loader Washing Machine - White</p>
+          <p class="caption text-grey mb-2">{{item_description}}</p>
         </div>
       </div>
       </div>
@@ -46,7 +46,66 @@
     components: {
       Card
     },
-    data () {}
+    data(){
+        return {
+              fullName:'',
+              profile_image_url:'',
+              reachId:'',
+              amount:'',
+              item_description:'',
+              user:'',
+              transaction_date:''
+        }
+    },
+    methods:{
+        submit(event){
+            event.preventDefault();  
+            var payload = {amount:this.amount,reachId:this.reachId,item_description:this.item_description,account:"456677",user:this.user};
+
+            fetch('http://localhost:93/v1/reachBusiness/grantLoan', {
+              
+  method: 'post', // or 'PUT'
+  mode: 'cors',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify(payload),
+})
+.then((response) => response.json())
+.then((data) => {
+  if(data){
+     if(data.status == 'success'){
+       this.$store.dispatch('ADD_LOAN_DATA',data.data);
+       console.log(this.$store.getters.loan.loan);
+       window.open('/checkout/create-trans/3','_self');
+     }
+     else{
+       this.$swal(data.message);
+     }  
+  }
+  console.log('Success:', data);
+})
+.catch((error) => {
+  console.log('Error:', error);
+});
+          
+        }
+    } ,    
+    mounted(){
+       let user = this.$store.getters.user;
+       console.log(this.$store.getters.loan);
+       let loan = this.$store.getters.loan;
+       this.fullName = user.first_name+' '+user.last_name;
+       this.profile_image_url = user.profile_image_url;
+       this.reachId = user.referral_code;
+       this.user = user;
+       this.amount = new Intl.NumberFormat().format(loan.amount);
+       //let date = loan.created_at.split('-');
+       this.transaction_date = ((new Date(loan.created_at))+'').split('00')[0].split('05')[0];
+       //console.log(date[0],date[1],date[2].split(' ')[0],loan.created_at);
+       this.item_description = loan.item_description;
+       this.$store.dispatch('CLEAR_STORE');  
+    }
   }
 </script>
 
