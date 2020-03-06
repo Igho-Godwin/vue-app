@@ -101,7 +101,8 @@
        this.user = user;
        this.amount = new Intl.NumberFormat().format(loan.amount);
        //let date = loan.created_at.split('-');
-       this.transaction_date = ((new Date(loan.created_at))+'').split('00')[0].split('05')[0];
+       //date = new Date(date[0],date[1],date[2].split(' ')[0]);
+       this.transaction_date = new Date(loan.created_at);
        //console.log(date[0],date[1],date[2].split(' ')[0],loan.created_at);
        this.item_description = loan.item_description;
        this.$store.dispatch('CLEAR_STORE');  

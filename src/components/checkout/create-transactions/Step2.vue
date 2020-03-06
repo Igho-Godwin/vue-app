@@ -57,7 +57,7 @@
             event.preventDefault();  
             var payload = {amount:this.amount,reachId:this.reachId,item_description:this.item_description,account:"456677",user:this.user};
 
-            fetch('http://localhost:93/v1/reachBusiness/grantLoan', {
+            fetch('https://staging.mybank.ng/v1/reachBusiness/grantLoan', {
               
   method: 'post', // or 'PUT'
   mode: 'cors',

@@ -17,15 +17,27 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="staff in staffs" :key="staff.userId">
-              <td><p>{{staff.userId}}</p></td>
-              <td><p>{{staff.loanAmount}}</p></td>
-              <td><p>{{staff.date}}</p></td>
-              <td><p>{{staff.status}}</p></td>
-              <td><p>{{staff.cashier}}</p></td>
-              <td><p>
-                <a href="#">View more</a>
-              </p></td>
+            <tr v-for="transaction in transactions" :key="transaction.id">
+              <td>
+                <p>{{transaction.reach_id}}</p>
+              </td>
+              <td>
+                <p>{{transaction.amount}}</p>
+              </td>
+              <td>
+                <p>{{processDate(transaction.created_at)}}</p>
+              </td>
+              <td>
+                <p>{{transaction.status}}</p>
+              </td>
+              <td>
+                <p>Ronke</p>
+              </td>
+              <td>
+                <p>
+                  <a href="#">View more</a>
+                </p>
+              </td>
             </tr>
           </tbody>
         </table>
@@ -40,26 +52,47 @@
     components: {
       Card
     },
-     data() {
+    data() {
       return {
-        staffs: [{
-            userId: 'bahd9',
-            loanAmount: '#100,000',
-            date: '12 Mar. 2020',
-            status: 'CONFIRMED',
-            cashier: 'Grace',
+        transactions: []
+      }
+    },
+    methods: {
+      processDate(transaction_date) {
+        //let date = transaction_date.split('-');
+        //date = new Date(date[0], date[1], date[2].split(' ')[0]);
+        return ((new Date(transaction_date)));
+      }
+    },
+    mounted() {
+      fetch('https://staging.mybank.ng/v1/reachBusiness/getAllTransactions', {
+
+          method: 'get', // or 'PUT'
+          mode: 'cors',
+          headers: {
+            'Content-Type': 'application/json',
           },
-      ]
-     }
-  },
-  props: [
+        })
+        .then((response) => response.json())
+        .then((data) => {
+          this.transactions = data.data;
+          console.log('Success:', data);
+        })
+        .catch((error) => {
+          console.log('Error:', error);
+        });
+
+
+    },
+    props: [
       'userId', 'loanAmount', 'date', 'status', 'cashier'
     ]
   }
 </script>
 
 <style lang="scss" scoped>
-@import "@/scss/abstracts/_variables.scss";
+  @import "@/scss/abstracts/_variables.scss";
+
   .card-body__table {
     border: solid 1px $smoke;
   }

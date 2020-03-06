@@ -31,3 +31,40 @@
     }
   }
 </style>
+
+<script>
+export default {
+    components: {
+      
+    },
+    data(){
+        return {
+              transactions:''
+
+        }
+    },
+   
+    methods:{
+       
+    } ,    
+    mounted(){
+        fetch('http://localhost:93/v1/reachBusiness/getAllTransactions', {
+              
+  method: 'get', // or 'PUT'
+  mode: 'cors',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+})
+.then((response) => response.json())
+.then((data) => {
+  this.transactions = data;
+  console.log('Success:', data);
+})
+.catch((error) => {
+  console.log('Error:', error);
+});
+    }
+   
+  }
+</script>

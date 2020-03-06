@@ -40,7 +40,7 @@
             event.preventDefault();  
             var payload = {reachId:this.reachId};
 
-            fetch('http://localhost:93/v1/reachBusiness/verifyCustomerIdentity', {
+            fetch('https://staging.mybank.ng/v1/reachBusiness/verifyCustomerIdentity', {
               
   method: 'post', // or 'PUT'
   mode: 'cors',
