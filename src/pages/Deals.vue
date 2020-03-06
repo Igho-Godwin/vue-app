@@ -1,3 +1,17 @@
 <template>
-  <div>Deals is coming soon to reach for business</div>
+ <div>
+    <ComingSoon
+    pageName="Deals"
+    pageIcon="deals"
+    />
+  </div> 
 </template>
+
+<script>
+  import ComingSoon from "@/components/ComingSoon";
+  export default {
+    components: {
+      ComingSoon,
+    }
+  }
+</script>
