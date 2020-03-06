@@ -1,5 +1,5 @@
 <template>
- <div class="col-lg-6">
+ <div>
     <ComingSoon
     pageName="Reviews"
     pageIcon="reviews"
