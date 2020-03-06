@@ -2,7 +2,7 @@
   <section>
     <div class="container">
       <div class="row">
-        <div class="col">
+        <div class="col pt-3">
         <Card>
           <div slot="card-header" class="card-header text-center card-header__placeholder">
             <p class="card--bg p-1 caption mb-4 m-0 text-white">COMING SOON</p>
@@ -55,7 +55,7 @@
     margin: 0 auto;
   }
 
-  .card-header {
-    width: 30%;
+   .card-header {
+    width: 12rem;
   }
 </style>
