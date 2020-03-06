@@ -2,8 +2,9 @@
   <div id="checkoutDashboard">
     <div class="container-fluid py-3">
       <div class="row">
-      <div class="col-xl-6 col-lg-8">
+      <div class="col-xl-9">
         <NewTransaction />
+        <TransactionsAdmin />
       </div>
     </div>
     </div>
@@ -13,11 +14,13 @@
 
 <script>
   import NewTransaction from "@/components/checkout/NewTransaction";
+  import TransactionsAdmin from "@/components/checkout/TransactionsAdmin";
 
   export default {
     name: "Checkout-Dashboard",
     components: {
-      NewTransaction
+      NewTransaction,
+      TransactionsAdmin
     }
   }
 </script>
