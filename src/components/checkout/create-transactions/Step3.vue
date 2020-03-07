@@ -54,9 +54,29 @@
     methods:{
         submit(event){
             event.preventDefault();  
-       //this.$store.dispatch('CLEAR_STORE');     
+            fetch('https://staging.mybank.ng/v1/reachBusiness/sendConfirmationNotificationToUser', {
+              
+  method: 'post', // or 'PUT'
+  mode: 'cors',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify(this.$store.getters.loan),
+})
+.then((response) => response.json())
+.then((data) => {
+  if(data){
+     if(data.status == 'success'){
        window.open('/checkout/create-trans/4','_self');
-        }
+     }
+  }
+  console.log('Success:', data);
+})
+.catch((error) => {
+  console.log('Error:', error);
+   });     
+      // window.open('/checkout/create-trans/4','_self');
+        }   
     }
 ,    
     mounted(){

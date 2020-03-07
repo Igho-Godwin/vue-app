@@ -7,7 +7,7 @@
           <p class="caption text-grey mb-2">LOAN AMOUNT</p>
         </div>
         <div class="text-bounds">
-          <caption class="caption text-yellow p-0">PENDING</caption>
+          <caption class="caption text-yellow p-0 " id='status'>{{loanStatus}}</caption>
         </div>
       </div>
       <div slot="card-body" class="card-body">
@@ -33,6 +33,10 @@
           <h3 class="text-black">Item Purchased</h3>
           <p class="caption text-grey mb-2">{{item_description}}</p>
         </div>
+        <div>
+          <br>
+          <button type='button' class="btn" @click="refresh()">Refresh</button>
+        </div>
       </div>
       </div>
       
@@ -54,30 +58,37 @@
               amount:'',
               item_description:'',
               user:'',
-              transaction_date:''
+              transaction_date:'',
+              loanStatus: 'PENDING',
+              
         }
     },
-    methods:{
-        submit(event){
-            event.preventDefault();  
-            var payload = {amount:this.amount,reachId:this.reachId,item_description:this.item_description,account:"456677",user:this.user};
-
-            fetch('http://localhost:93/v1/reachBusiness/grantLoan', {
+ 
+   methods:{
+     refresh(){
+      fetch('https://staging.mybank.ng/v1/reachBusiness/checkTransaction', {
               
   method: 'post', // or 'PUT'
   mode: 'cors',
   headers: {
     'Content-Type': 'application/json',
   },
-  body: JSON.stringify(payload),
+  body: JSON.stringify(this.$store.getters.loan),
 })
 .then((response) => response.json())
 .then((data) => {
   if(data){
      if(data.status == 'success'){
-       this.$store.dispatch('ADD_LOAN_DATA',data.data);
-       console.log(this.$store.getters.loan.loan);
-       window.open('/checkout/create-trans/3','_self');
+       if(data.data.status == 'active'){
+            this.loanStatus = 'CONFIRMED';
+            let element = document.getElementById("status");
+            this.$store.dispatch('ADD_LOAN_DATA',data.data);
+            element.classList.add("text-green");
+            element.classList.remove("text-yellow");
+            this.$store.dispatch('CLEAR_STORE');
+            window.open('/checkout','_self');
+            
+       }
      }
      else{
        this.$swal(data.message);
@@ -89,8 +100,9 @@
   console.log('Error:', error);
 });
           
-        }
-    } ,    
+    }
+  
+   },
     mounted(){
        let user = this.$store.getters.user;
        console.log(this.$store.getters.loan);
@@ -99,13 +111,21 @@
        this.profile_image_url = user.profile_image_url;
        this.reachId = user.referral_code;
        this.user = user;
+       if(loan.status == 'active'){
+         this.loanStatus = 'confirmed';
+         let element = document.getElementById("status");
+         element.classList.add("text-green");
+         element.classList.remove("text-yellow");
+       }
        this.amount = new Intl.NumberFormat().format(loan.amount);
        //let date = loan.created_at.split('-');
        //date = new Date(date[0],date[1],date[2].split(' ')[0]);
        this.transaction_date = new Date(loan.created_at);
        //console.log(date[0],date[1],date[2].split(' ')[0],loan.created_at);
        this.item_description = loan.item_description;
-       this.$store.dispatch('CLEAR_STORE');  
+       //this.$store.dispatch('CLEAR_STORE'); 
+       
+          
     }
   }
 </script>
