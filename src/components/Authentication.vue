@@ -6,6 +6,7 @@
         <router-link to="/" class="reach-business-logo">
           <img src="@/assets/reach-business-logo.svg" alt="REACH Business">
         </router-link>
+              <p class="paragraph text-center pt-2">myAdvantage Health</p>
         <div class="authentication__heading">
           <h1 class="authentication__title">{{ title }}</h1>
           <slot name="explainer"></slot>

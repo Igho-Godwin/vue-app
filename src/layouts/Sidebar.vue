@@ -4,6 +4,7 @@
       <router-link to="/" class="sidebar-header__logo">
         <img src="@/assets/reach-business-logo.svg" alt="REACH for Business">
       </router-link>
+      <p class="paragraph text-center pt-2">myAdvantage Health</p>
     </div>
     <nav class="sidebar-nav">
       <a v-for="link in navLinks" :key="link.id" :href="link.url" class="sidebar-nav__link" :class="(link.active) ? 'sidebar-nav__link--active' : '' ">
