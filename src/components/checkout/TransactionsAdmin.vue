@@ -101,6 +101,7 @@
       }
     },
     mounted() {
+      this.$store.dispatch('CLEAR_STORE');
       fetch('https://staging.mybank.ng/v1/reachBusiness/getAllTransactions', {
 
           method: 'get', // or 'PUT'

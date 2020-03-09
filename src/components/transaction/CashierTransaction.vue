@@ -35,7 +35,7 @@
         </div>
         <div>
           <br>
-          <button type='button' class="btn" @click="refresh()">Refresh</button>
+          
         </div>
       </div>
       </div>
@@ -60,6 +60,8 @@
               user:'',
               transaction_date:'',
               loanStatus: 'PENDING',
+              checkStatus:1,
+              loan:'',
               days: [
                        'Sun',
                        'Mon',
@@ -101,6 +103,7 @@
       },
      
      refresh(){
+       if(this.checkStatus == 1){
       fetch('https://staging.mybank.ng/v1/reachBusiness/checkTransaction', {
               
   method: 'post', // or 'PUT'
@@ -116,6 +119,7 @@
      if(data.status == 'success'){
        if(data.data.status == 'active'){
             this.loanStatus = 'CONFIRMED';
+            this.checkStatus = 2;
             let element = document.getElementById("status");
             this.$store.dispatch('ADD_LOAN_DATA',data.data);
             element.classList.add("text-green");
@@ -136,12 +140,14 @@
 });
           
     }
-  
+     }
    },
     mounted(){
        let user = this.$store.getters.user;
        console.log(this.$store.getters.loan);
        let loan = this.$store.getters.loan;
+       this.loan = loan;
+       //var store = this.store;
        this.fullName = user.first_name+' '+user.last_name;
        this.profile_image_url = user.profile_image_url;
        this.reachId = user.referral_code;
@@ -158,8 +164,48 @@
        this.transaction_date = this.formatDate(new Date(loan.created_at));
        //console.log(date[0],date[1],date[2].split(' ')[0],loan.created_at);
        this.item_description = loan.item_description;
-       //this.$store.dispatch('CLEAR_STORE'); 
        
+       //this.$store.dispatch('CLEAR_STORE'); 
+       setInterval(function(){ 
+         console.log(loan);
+      fetch('https://staging.mybank.ng/v1/reachBusiness/checkTransaction', {
+              
+  method: 'post', // or 'PUT'
+  mode: 'cors',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+  body: JSON.stringify(loan),
+})
+.then((response) => response.json())
+.then((data) => {
+  if(data){
+     if(data.status == 'success'){
+       if(data.data.status == 'active'){
+            this.loanStatus = 'CONFIRMED';
+            this.checkStatus = 2;
+            let element = document.getElementById("status");
+            //store.dispatch('ADD_LOAN_DATA',data.data);
+            element.classList.add("text-green");
+            element.classList.remove("text-yellow");
+            //this.$store.dispatch('CLEAR_STORE');
+            window.open('/checkout','_self');
+            
+       }
+     }
+     else{
+       this.$swal(data.message);
+     }  
+  }
+  console.log('Success:', data);
+})
+.catch((error) => {
+  console.log('Error:', error);
+});
+          
+    }
+     
+    , 10000);
           
     }
   }
