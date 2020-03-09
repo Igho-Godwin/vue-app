@@ -5,7 +5,7 @@
       <p class="m-0">Enter and approve new checkout transactions.</p>
     </div>
     <div class="new-transction__cta">
-      <router-link to="/checkout/create-trans/1" class="btn btn-snow">New Transaction</router-link>
+      <a href='/checkout/create-trans/1' class="btn btn-snow">New Transaction</a>
     </div>
   </div>
 </template>
