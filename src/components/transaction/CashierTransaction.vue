@@ -118,14 +118,15 @@
   if(data){
      if(data.status == 'success'){
        if(data.data.status == 'active'){
-            this.loanStatus = 'CONFIRMED';
+            //this.loanStatus = 'CONFIRMED';
             this.checkStatus = 2;
             let element = document.getElementById("status");
             this.$store.dispatch('ADD_LOAN_DATA',data.data);
             element.classList.add("text-green");
+            element.innerHTML('CONFIRMED');
             element.classList.remove("text-yellow");
             this.$store.dispatch('CLEAR_STORE');
-            window.open('/checkout','_self');
+            
             
        }
      }
@@ -133,6 +134,7 @@
        this.$swal(data.message);
      }  
   }
+  setTimeout(function(){ window.open('/checkout','_self'); }, 10000);
   console.log('Success:', data);
 })
 .catch((error) => {
@@ -166,7 +168,7 @@
        this.item_description = loan.item_description;
        
        //this.$store.dispatch('CLEAR_STORE'); 
-       setInterval(function(){ 
+       setInterval(()=>{ 
          console.log(loan);
       fetch('https://staging.mybank.ng/v1/reachBusiness/checkTransaction', {
               
@@ -183,13 +185,14 @@
      if(data.status == 'success'){
        if(data.data.status == 'active'){
             this.loanStatus = 'CONFIRMED';
-            this.checkStatus = 2;
             let element = document.getElementById("status");
             //store.dispatch('ADD_LOAN_DATA',data.data);
             element.classList.add("text-green");
             element.classList.remove("text-yellow");
+            //element.innerHTML("CONFIRMED");
             //this.$store.dispatch('CLEAR_STORE');
-            window.open('/checkout','_self');
+            
+  setTimeout(function(){ window.open('/checkout','_self'); }, 3000);
             
        }
      }
