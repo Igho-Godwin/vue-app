@@ -60,11 +60,46 @@
               user:'',
               transaction_date:'',
               loanStatus: 'PENDING',
+              days: [
+                       'Sun',
+                       'Mon',
+                       'Tue',
+                       'Wed',
+                       'Thu',
+                       'Fri',
+                       'Sat'
+              ],
+              months:[
+                'January',
+                'February',
+                'March',
+                'April',
+                'May',
+                'June',
+                'July',
+                'August',
+                'September',
+                'October',
+                'November',
+                'December'
+              ]           
               
         }
     },
  
    methods:{
+
+     formatDate(date){
+        var hours = date.getHours();
+        var minutes = date.getMinutes();
+        var ampm = hours >= 12 ? 'pm' : 'am';
+        hours = hours % 12;
+        hours = hours ? hours : 12; // the hour '0' should be '12'
+        minutes = minutes < 10 ? '0'+minutes : minutes;
+        var strTime = this.days[date.getDay()]+' '+date.getDate()+' '+this.months[date.getMonth()]+' '+date.getFullYear()+' '+hours + ':' + minutes + ' ' + ampm;
+        return strTime;
+      },
+     
      refresh(){
       fetch('https://staging.mybank.ng/v1/reachBusiness/checkTransaction', {
               
@@ -120,7 +155,7 @@
        this.amount = new Intl.NumberFormat().format(loan.amount);
        //let date = loan.created_at.split('-');
        //date = new Date(date[0],date[1],date[2].split(' ')[0]);
-       this.transaction_date = new Date(loan.created_at);
+       this.transaction_date = this.formatDate(new Date(loan.created_at));
        //console.log(date[0],date[1],date[2].split(' ')[0],loan.created_at);
        this.item_description = loan.item_description;
        //this.$store.dispatch('CLEAR_STORE'); 

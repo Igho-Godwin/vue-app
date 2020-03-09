@@ -10,8 +10,6 @@ Vue.use(VueSweetalert2);
 
 
 
-
-
 // === LAYOUTS ===
   // Default Layout
   import DefaultLayout from "@/layouts/DefaultLayout.vue";

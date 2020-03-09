@@ -43,25 +43,61 @@
         </table>
       </div>
     </Card>
+   
 
   </div>
 </template>
 <script>
   import Card from "@/components/Card";
+  
   export default {
     components: {
-      Card
+      Card,
+ 
     },
     data() {
       return {
-        transactions: []
+        transactions: [],
+        days: [
+                       'Sun',
+                       'Mon',
+                       'Tue',
+                       'Wed',
+                       'Thu',
+                       'Fri',
+                       'Sat'
+              ],
+              months:[
+                'January',
+                'February',
+                'March',
+                'April',
+                'May',
+                'June',
+                'July',
+                'August',
+                'September',
+                'October',
+                'November',
+                'December'
+              ]           
       }
     },
     methods: {
+      formatDate(date){
+        var hours = date.getHours();
+        var minutes = date.getMinutes();
+        var ampm = hours >= 12 ? 'pm' : 'am';
+        hours = hours % 12;
+        hours = hours ? hours : 12; // the hour '0' should be '12'
+        minutes = minutes < 10 ? '0'+minutes : minutes;
+        var strTime = this.days[date.getDay()]+' '+date.getDate()+' '+this.months[date.getMonth()]+' '+date.getFullYear()+' '+hours + ':' + minutes + ' ' + ampm;
+        return strTime;
+      },
       processDate(transaction_date) {
         //let date = transaction_date.split('-');
         //date = new Date(date[0], date[1], date[2].split(' ')[0]);
-        return ((new Date(transaction_date)));
+        return this.formatDate(new Date(transaction_date));
       }
     },
     mounted() {
