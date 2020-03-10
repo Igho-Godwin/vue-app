@@ -16,7 +16,7 @@
             <img v-bind:src="profile_image_url"  class="img-showcase" alt="customer's picture">
           </div>
           <div>
-            <h3>{{fullName}}: 123AB</h3>
+            <h3>{{fullName}}: {{reachId}}</h3>
             <paragraph>This user is yet to confirm and accept terms of loan.</paragraph>
           </div>
         </div>
