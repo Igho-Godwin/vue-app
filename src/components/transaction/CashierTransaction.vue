@@ -92,7 +92,7 @@
    methods:{
 
      formatDate(date){
-        var hours = date.getHours();
+        var hours = date.getHours()+1;
         var minutes = date.getMinutes();
         var ampm = hours >= 12 ? 'pm' : 'am';
         hours = hours % 12;
@@ -163,7 +163,7 @@
        this.amount = new Intl.NumberFormat().format(loan.amount);
        //let date = loan.created_at.split('-');
        //date = new Date(date[0],date[1],date[2].split(' ')[0]);
-       this.transaction_date = this.formatDate(new Date(loan.created_at));
+       this.transaction_date = this.formatDate(new Date(loan.start_date));
        //console.log(date[0],date[1],date[2].split(' ')[0],loan.created_at);
        this.item_description = loan.item_description;
        

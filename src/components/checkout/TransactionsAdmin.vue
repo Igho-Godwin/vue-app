@@ -25,7 +25,7 @@
                 <p>{{transaction.amount}}</p>
               </td>
               <td>
-                <p>{{processDate(transaction.created_at)}}</p>
+                <p>{{processDate(transaction.start_date)}}</p>
               </td>
               <td>
                 <p>{{transaction.status}}</p>
@@ -85,7 +85,7 @@
     },
     methods: {
       formatDate(date){
-        var hours = date.getHours();
+        var hours = date.getHours()+1;
         var minutes = date.getMinutes();
         var ampm = hours >= 12 ? 'pm' : 'am';
         hours = hours % 12;
