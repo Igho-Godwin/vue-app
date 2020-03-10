@@ -85,7 +85,7 @@
         if ( this.activeNav === "Dashboard" ) {
           this.navLinks[0].active = true
         } 
-        else if ( this.activeNav === "Checkout with REACH" ) {
+        else if ( this.activeNav === "Checkout with REACH | myAdvantage Health" ) {
           this.navLinks[1].active = true
         }
         else if ( this.activeNav === "Deals" ) {

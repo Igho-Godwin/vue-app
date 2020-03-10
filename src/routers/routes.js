@@ -44,7 +44,7 @@ export const routes = [
     component: () => import("@/pages/checkout/CheckoutDashboard"),
     meta: {
       layout: 'dashboard',
-      headerTitle: 'Checkout with REACH'
+      headerTitle: 'Checkout with REACH | myAdvantage Health'
     }
   },
   {
@@ -52,7 +52,7 @@ export const routes = [
     component: () => import("@/pages/checkout/CreateTransactionStep1"),
     meta: {
       layout: 'dashboard',
-      headerTitle: 'Checkout with REACH'
+      headerTitle: 'Checkout with REACH | myAdvantage Health'
     }
   },
   {
@@ -60,7 +60,7 @@ export const routes = [
     component: () => import("@/pages/checkout/CreateTransactionStep2"),
     meta: {
       layout: 'dashboard',
-      headerTitle: 'Checkout with REACH'
+      headerTitle: 'Checkout with REACH | myAdvantage Health'
     }
   },
   {
@@ -68,7 +68,7 @@ export const routes = [
     component: () => import("@/pages/checkout/CreateTransactionStep3"),
     meta: {
       layout: 'dashboard',
-      headerTitle: 'Checkout with REACH'
+      headerTitle: 'Checkout with REACH | myAdvantage Health'
     }
   },
   {
@@ -76,7 +76,7 @@ export const routes = [
     component: () => import("@/pages/checkout/CreateTransactionStep4"),
     meta: {
       layout: 'dashboard',
-      headerTitle: 'Checkout with REACH'
+      headerTitle: 'Checkout with REACH | myAdvantage Health'
     }
   },
 
