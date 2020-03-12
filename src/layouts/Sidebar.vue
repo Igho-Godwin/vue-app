@@ -41,8 +41,8 @@
             active: false
           },
           {
-            name: 'Checkout',
-            url: '/checkout',
+            name: 'Transaction',
+            url: '/transaction',
             icon: 'checkout',
             active: false
           },
@@ -67,7 +67,7 @@
         if ( this.activeNav === "Dashboard" ) {
           this.navLinks[0].active = true
         } 
-        else if ( this.activeNav === "Checkout with REACH | myAdvantage Health" ) {
+        else if ( this.activeNav === "Checkout with REACH" ) {
           this.navLinks[1].active = true
         }
         else if ( this.activeNav === "Settings" ) {
