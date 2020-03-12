@@ -47,24 +47,6 @@
             active: false
           },
           {
-            name: 'Deals',
-            url: '/deals',
-            icon: 'deals',
-            active: false
-          },
-          {
-            name: 'Reviews',
-            url: '/reviews',
-            icon: 'reviews',
-            active: false
-          },
-          {
-            name: 'Market Insights',
-            url: '/market-insights',
-            icon: 'market-insight',
-            active: false
-          },
-          {
             name: 'Settings',
             url: '/settings/checkout',
             icon: 'settings',
@@ -87,15 +69,6 @@
         } 
         else if ( this.activeNav === "Checkout with REACH | myAdvantage Health" ) {
           this.navLinks[1].active = true
-        }
-        else if ( this.activeNav === "Deals" ) {
-          this.navLinks[2].active = true
-        }
-        else if ( this.activeNav === "Reviews" ) {
-          this.navLinks[3].active = true
-        }
-        else if ( this.activeNav === "Market Insights" ) {
-          this.navLinks[4].active = true
         }
         else if ( this.activeNav === "Settings" ) {
           this.navLinks[5].active = true
