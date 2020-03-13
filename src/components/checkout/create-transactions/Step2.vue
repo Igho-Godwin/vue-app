@@ -121,7 +121,8 @@
 
   .img-showcase {
     display: flex;
-    height: 8rem;
-    width: 8rem;
+    height: 9rem;
+    max-width: 10rem;
+    width: 100%;
   }
 </style>
