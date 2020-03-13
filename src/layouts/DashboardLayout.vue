@@ -1,6 +1,6 @@
 <template>
   <div class="dashboard-layout">
-    <Sidebar userName="Mary Ekpe" companyName="Konga.com" :activeSidebar="isSidebarActive" :activeNav="headerTitle" />
+    <Sidebar userName="Mary Ekpe" companyName="myAdvantage Health" :activeSidebar="isSidebarActive" :activeNav="headerTitle" />
     <Header :title="headerTitle" @openSidebar="openSidebar()" :backNav="backNavActive" :backNavTitle="backNavTitle" :backNavUrl="backNavUrl" />
     <main class="dashboard-main">
       <slot />
