@@ -15,18 +15,18 @@
             <paragraph>REACH ID: {{reachId}}</paragraph>
           </div>
         </div>
+        <div class="form-check mb-3">
+            <input type="checkbox" class="form-check-input" id="confirmID" required>
+            <label class="caption" for="confirmID">Confirm government issued ID</label>
+          </div>
         <form @submit="submit($event)">
           <div class="form-row mb-3">
             <label for="amount" class="caption">AMOUNT (&#8358;)</label>
             <input type="number" v-model='amount' class="form-control" id="number" required>
           </div>
-          <div class="form-row mb-3">
+          <div class="form-row mb-5">
             <label for="itemDescription" class="caption">ITEM DESCRIPTION</label>
             <input type="text" v-model='item_description' class="form-control" id="itemDescription" required>
-          </div>
-          <div class="form-check mb-5">
-            <input type="checkbox" class="form-check-input" id="confirmID" required>
-            <label class="caption" for="confirmID">Confirm government issued ID</label>
           </div>
           <div class="form-row justify-content-between">
             <a href='/checkout/create-trans/1'><button type="button" class="btn btn-snow">Go Back</button></a>
