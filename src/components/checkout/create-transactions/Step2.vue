@@ -16,9 +16,9 @@
           </div>
         </div>
         <div class="form-check mb-3">
-            <input type="checkbox" class="form-check-input" id="confirmID" required>
-            <label class="caption" for="confirmID">Confirm government issued ID</label>
-          </div>
+          <input type="checkbox" class="form-check-input" id="confirmID" v-on:click="greet" required>
+          <label class="caption checkbox-text" for="confirmID" id="confirmIDText">Confirm government issued ID</label>
+        </div>
         <form @submit="submit($event)">
           <div class="form-row mb-3">
             <label for="amount" class="caption">AMOUNT (&#8358;)</label>
@@ -94,6 +94,18 @@
             console.log('Error:', error);
           });
 
+      },
+      greet: function myFunction() {
+        var checkBox = document.getElementById("confirmID");
+
+        var text = document.getElementById("confirmIDText");
+
+
+        if (checkBox.checked == true) {
+          text.style.color = "grey";
+        } else {
+          text.style.color = "snow";
+        }
       }
     },
     mounted() {
@@ -106,13 +118,18 @@
       this.profile_image_url = user.profile_image_url;
       this.reachId = user.referral_code;
       this.user = user;
-    }
 
+
+
+
+
+    },
   }
 </script>
 
 <style lang="scss" scoped>
   @import "@/scss/abstracts/_variables.scss";
+  @import "@/scss/abstracts/_mixins.scss";
 
   .card--bg {
     background: $brand-gradient;
@@ -124,5 +141,9 @@
     height: 9rem;
     max-width: 10rem;
     width: 100%;
+  }
+
+  .checkbox-text {
+    color: snow;
   }
 </style>
