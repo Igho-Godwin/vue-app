@@ -1,8 +1,9 @@
 <template>
   <div>
     <Card>
-      <div slot="card-header" class="card-header">
+      <div slot="card-header" class="card-header justify-content-between align-items-center d-md-flex">
         <h3>Recent Transactions</h3>
+        <a href='/checkout/create-trans/1' class="btn btn-blue">New Transaction</a>
       </div>
       <div slot="card-body" class="card-body">
         <table class="table card-body__table table-responsive">
@@ -47,12 +48,35 @@
             status: 'CONFIRMED',
             cashier: 'Grace',
           },
-      ]
+      ],
+        transactions:''
      }
   },
   props: [
       'userId', 'loanAmount', 'date', 'status', 'cashier'
-    ]
+    ],
+   
+    methods:{
+       
+    } ,    
+    mounted(){
+        fetch('http://localhost:93/v1/reachBusiness/getAllTransactions', {
+              
+  method: 'get', // or 'PUT'
+  mode: 'cors',
+  headers: {
+    'Content-Type': 'application/json',
+  },
+})
+.then((response) => response.json())
+.then((data) => {
+  this.transactions = data;
+  console.log('Success:', data);
+})
+.catch((error) => {
+  console.log('Error:', error);
+});
+    }
   }
 </script>
 

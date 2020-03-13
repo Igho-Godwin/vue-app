@@ -1,8 +1,9 @@
 <template>
   <div>
     <Card>
-      <div slot="card-header" class="card-header">
+      <div slot="card-header" class="card-header justify-content-between align-items-center d-md-flex">
         <h3>Recent Transactions</h3>
+        <a href='/checkout/create-trans/1' class="btn btn-blue">New Transaction</a>
       </div>
       <div slot="card-body" class="card-body">
         <table class="table card-body__table table-responsive">

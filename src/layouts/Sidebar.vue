@@ -1,9 +1,11 @@
 <template>
   <div class="dashboard-sidebar" :class="(activeSidebar) ? 'dashboard-sidebar--active' : '' ">
-    <div class="sidebar-header">
+    <div class="sidebar-header text-center">
       <router-link to="/" class="sidebar-header__logo">
-        <img src="@/assets/reach-business-logo.svg" alt="REACH for Business">
+        <img src="@/assets/myAdvantage.png" alt="myAdvantage Health">
       </router-link>
+      <h3> {{companyName}} </h3>
+      <p class="caption"> {{userName}} </p>
     </div>
     <nav class="sidebar-nav">
       <a v-for="link in navLinks" :key="link.id" :href="link.url" class="sidebar-nav__link" :class="(link.active) ? 'sidebar-nav__link--active' : '' ">
@@ -13,17 +15,12 @@
         <span class="sidebar-nav__link-name">{{link.name}}</span>
       </a>
     </nav>
-    <div class="sidebar-footer">
-      <div class="company-logo">
-        <img :src="companyLogo">
-      </div>
-      <div class="user-info">
-        <p class="user-info__name"> {{userName}} </p>
-        <p class="user-info__company-name"> {{companyName}} </p>
-      </div>
-      <button class="log-out-btn" title="Sign Out">
-        <img src="@/assets/icons/sign-out.svg">
+    <button class="log-out-btn sidebar-nav__link" title="Sign Out">
+        <img class="sidebar-nav__link-icon" src="@/assets/icons/sign-out.svg">
+        <span class="sidebar-nav__link-name">Sign Out</span> 
       </button>
+    <div class="sidebar-footer">
+      <img class="sidebar-footer__icon" src="@/assets/reach-business-logo.svg" alt="REACH for Business">
     </div>
   </div>
 </template>
@@ -41,27 +38,9 @@
             active: false
           },
           {
-            name: 'Checkout',
-            url: '/checkout',
+            name: 'Transactions',
+            url: '/transaction',
             icon: 'checkout',
-            active: false
-          },
-          {
-            name: 'Deals',
-            url: '/deals',
-            icon: 'deals',
-            active: false
-          },
-          {
-            name: 'Reviews',
-            url: '/reviews',
-            icon: 'reviews',
-            active: false
-          },
-          {
-            name: 'Market Insights',
-            url: '/market-insights',
-            icon: 'market-insight',
             active: false
           },
           {
@@ -76,7 +55,6 @@
     props: {
       userName: String,
       companyName: String,
-      companyLogo: String,
       activeSidebar: Boolean,
       activeNav: String
     },
@@ -85,17 +63,8 @@
         if ( this.activeNav === "Dashboard" ) {
           this.navLinks[0].active = true
         } 
-        else if ( this.activeNav === "Checkout with REACH | myAdvantage Health" ) {
+        else if ( this.activeNav === "Checkout with REACH" ) {
           this.navLinks[1].active = true
-        }
-        else if ( this.activeNav === "Deals" ) {
-          this.navLinks[2].active = true
-        }
-        else if ( this.activeNav === "Reviews" ) {
-          this.navLinks[3].active = true
-        }
-        else if ( this.activeNav === "Market Insights" ) {
-          this.navLinks[4].active = true
         }
         else if ( this.activeNav === "Settings" ) {
           this.navLinks[5].active = true
@@ -183,31 +152,7 @@
     align-items: center;
     margin-right: .5rem;
   }
-  .sidebar-footer {
-    display: flex;
-    padding: 1rem;
-    border-top: 1px solid $smoke;
-  }
-  .company-logo {
-    height: 3rem;
-    width: 3rem;
-    border-radius: 50%;
-    background: $dark-snow;
-  }
-  .user-info {
-    padding: 0 1rem;
-    flex: 1 0 auto;
-  }
-  .user-info__name {
-    font-weight: 600;
-    font-size: 1rem;
-    margin: 0;
-  }
-  .user-info__company-name {
-    margin: 0;
-    font-size: .75rem;
-    color: $secondary-text;
-  }
+  
   .log-out-btn {
     background: unset;
     border: unset;
@@ -227,6 +172,7 @@
         content: none;
       }
     }
+
     .sidebar-header__logo {
       img {
         height: 2rem;
@@ -243,6 +189,15 @@
     .sidebar-footer {
       padding-left: 1.5rem;
       padding-right: 1.5rem;
+      display: flex;
+      padding: 1rem;
+      border-top: 1px solid $smoke;
+    }
+
+    .sidebar-footer__icon {
+      max-width: 13rem;
+      width: 100%;
+      margin: 0 auto;
     }
     
   }
