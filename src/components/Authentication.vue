@@ -51,6 +51,8 @@ export default {
     display: inline-block;
     img {
       height: 2rem;
+      max-width: 16.9375rem;
+      width: 100%;
     }
   }
   .authentication__heading {
