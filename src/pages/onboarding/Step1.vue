@@ -4,7 +4,7 @@
       <div slot="card-body" class="card-body">
         <lottie-player src="https://assets7.lottiefiles.com/packages/lf20_ISbOsd.json" background="transparent" speed="1" loop autoplay ></lottie-player>
         <p class="text-center">Welcome to REACH for Business, you can post your deals, and see reviews from your customers. </p>
-        <router-link to="/onboarding/2" class="btn btn-blue btn-block mt-5">Setup your Company</router-link>
+        <router-link to="/onboarding/2" class="btn btn-blue btn-block mt-5">Setup Company</router-link>
       </div>
     </Card>
   </Onboarding>

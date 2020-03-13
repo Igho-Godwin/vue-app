@@ -15,18 +15,18 @@
             <paragraph>REACH ID: {{reachId}}</paragraph>
           </div>
         </div>
+        <div class="form-check mb-3">
+          <input type="checkbox" class="form-check-input" id="confirmID" v-on:click="greet" required>
+          <label class="caption checkbox-text" for="confirmID" id="confirmIDText">Confirm government issued ID</label>
+        </div>
         <form @submit="submit($event)">
           <div class="form-row mb-3">
             <label for="amount" class="caption">AMOUNT (&#8358;)</label>
             <input type="number" v-model='amount' class="form-control" id="number" required>
           </div>
-          <div class="form-row mb-3">
+          <div class="form-row mb-5">
             <label for="itemDescription" class="caption">ITEM DESCRIPTION</label>
             <input type="text" v-model='item_description' class="form-control" id="itemDescription" required>
-          </div>
-          <div class="form-check mb-5">
-            <input type="checkbox" class="form-check-input" id="confirmID" required>
-            <label class="caption" for="confirmID">Confirm government issued ID</label>
           </div>
           <div class="form-row justify-content-between">
             <a href='/checkout/create-trans/1'><button type="button" class="btn btn-snow">Go Back</button></a>
@@ -94,6 +94,18 @@
             console.log('Error:', error);
           });
 
+      },
+      greet: function myFunction() {
+        var checkBox = document.getElementById("confirmID");
+
+        var text = document.getElementById("confirmIDText");
+
+
+        if (checkBox.checked == true) {
+          text.style.color = "grey";
+        } else {
+          text.style.color = "#ccc";
+        }
       }
     },
     mounted() {
@@ -106,13 +118,18 @@
       this.profile_image_url = user.profile_image_url;
       this.reachId = user.referral_code;
       this.user = user;
-    }
 
+
+
+
+
+    },
   }
 </script>
 
 <style lang="scss" scoped>
   @import "@/scss/abstracts/_variables.scss";
+  @import "@/scss/abstracts/_mixins.scss";
 
   .card--bg {
     background: $brand-gradient;
@@ -121,7 +138,12 @@
 
   .img-showcase {
     display: flex;
-    height: 8rem;
-    width: 8rem;
+    height: 9rem;
+    max-width: 10rem;
+    width: 100%;
+  }
+
+  .checkbox-text {
+    color: $smoke;
   }
 </style>

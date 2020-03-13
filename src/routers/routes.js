@@ -40,11 +40,11 @@ export const routes = [
   },
   // CHECKOUT WITH REACH
   {
-    path: '/checkout',
-    component: () => import("@/pages/checkout/CheckoutDashboard"),
+    path: '/transaction',
+    component: () => import("@/pages/checkout/TransactionDashboard"),
     meta: {
       layout: 'dashboard',
-      headerTitle: 'Checkout with REACH | myAdvantage Health'
+      headerTitle: 'Checkout with REACH'
     }
   },
   {
@@ -52,7 +52,7 @@ export const routes = [
     component: () => import("@/pages/checkout/CreateTransactionStep1"),
     meta: {
       layout: 'dashboard',
-      headerTitle: 'Checkout with REACH | myAdvantage Health'
+      headerTitle: 'Checkout with REACH'
     }
   },
   {
@@ -60,7 +60,7 @@ export const routes = [
     component: () => import("@/pages/checkout/CreateTransactionStep2"),
     meta: {
       layout: 'dashboard',
-      headerTitle: 'Checkout with REACH | myAdvantage Health'
+      headerTitle: 'Checkout with REACH'
     }
   },
   {
@@ -68,7 +68,7 @@ export const routes = [
     component: () => import("@/pages/checkout/CreateTransactionStep3"),
     meta: {
       layout: 'dashboard',
-      headerTitle: 'Checkout with REACH | myAdvantage Health'
+      headerTitle: 'Checkout with REACH'
     }
   },
   {
@@ -76,7 +76,7 @@ export const routes = [
     component: () => import("@/pages/checkout/CreateTransactionStep4"),
     meta: {
       layout: 'dashboard',
-      headerTitle: 'Checkout with REACH | myAdvantage Health'
+      headerTitle: 'Checkout with REACH'
     }
   },
 
@@ -138,29 +138,5 @@ export const routes = [
   {
     path: '/all-cards',
     component: () => import("@/pages/AllCards")
-  },
-  {
-    path: '/deals',
-    component: () => import("@/pages/Deals"),
-    meta: {
-      layout: 'dashboard',
-      headerTitle: 'Deals'
-    }
-  },
-  {
-    path: '/market-insights',
-    component: () => import("@/pages/MarketInsights"),
-    meta: {
-      layout: 'dashboard',
-      headerTitle: 'Market Insights'
-    }
-  },
-  {
-    path: '/reviews',
-    component: () => import("@/pages/Reviews"),
-    meta: {
-      layout: 'dashboard',
-      headerTitle: 'Reviews'
-    }
   },
 ];

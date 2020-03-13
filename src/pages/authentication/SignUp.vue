@@ -11,7 +11,7 @@
         <input type="text" class="form-control" id="workEmail" required>
       </div>
       <div class="form-group">
-        <label for="businessType" class="caption">Business Name</label>
+        <label for="businessType" class="caption">Business Type</label>
         <select class="form-control text-regular" id="businessType" required>
           <option selected>Choose...</option>
           <option>Faith &amp; Charity</option>
@@ -22,7 +22,7 @@
         </select>
       </div>
       <div class="form-group">
-        <label for="password" class="caption">Create Password</label>
+        <label for="password" class="caption">Password</label>
         <input type="text" class="form-control" id="password" required>
       </div>
       
