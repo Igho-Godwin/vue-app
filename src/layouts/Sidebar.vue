@@ -38,7 +38,7 @@
             active: false
           },
           {
-            name: 'Transaction',
+            name: 'Transactions',
             url: '/transaction',
             icon: 'checkout',
             active: false
