@@ -104,7 +104,7 @@
         if (checkBox.checked == true) {
           text.style.color = "grey";
         } else {
-          text.style.color = "snow";
+          text.style.color = "#ccc";
         }
       }
     },
@@ -144,6 +144,6 @@
   }
 
   .checkbox-text {
-    color: snow;
+    color: $smoke;
   }
 </style>

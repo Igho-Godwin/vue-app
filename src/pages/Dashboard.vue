@@ -3,7 +3,7 @@
     <div class="container-fluid py-5">
       <div class="row justify-content-center">
         <div class="col-lg-8 text-center mb-5">
-          <h1>Hi {{userName}} - Welcome to REACH for Business</h1>
+          <h1>Hi Mary - Welcome to REACH for Business</h1>
           <p class="secondary-text">
             What do you want to do today?
           </p>
