@@ -6,13 +6,13 @@ import VuexPersist from 'vuex-persist';
 Vue.use(Vuex);
 
 const vuexLocalStorage = new VuexPersist({
-    key: 'my-app' ,// The key to store the state on in the storage provider.
-    storage: window.localStorage, // or window.sessionStorage or localForage
-    // Function that passes the state and returns the state with only the objects you want to store.
-    // reducer: state => state,
-    // Function that passes a mutation and lets you decide if it should update the state in localStorage.
-    // filter: mutation => (true)
-  })
+  key: 'my-app', // The key to store the state on in the storage provider.
+  storage: window.localStorage, // or window.sessionStorage or localForage
+  // Function that passes the state and returns the state with only the objects you want to store.
+  // reducer: state => state,
+  // Function that passes a mutation and lets you decide if it should update the state in localStorage.
+  // filter: mutation => (true)
+})
 
 
 const store = new Vuex.Store({
@@ -20,35 +20,65 @@ const store = new Vuex.Store({
   plugins: [vuexLocalStorage.plugin],
 
   state: {
-    store: [{user:''},{loan:''}]
+    store: [{
+      user: ''
+    }, {
+      loan: ''
+    }, {
+      initial_setup_data: ''
+    }]
   },
   actions: {
-    ADD_USER: function({ commit }, new_user) {
+    ADD_USER: function ({
+      commit
+    }, new_user) {
       var set_new = {
         user: new_user,
       };
       commit("ADD_USER_MUTATION", set_new);
     },
-    ADD_LOAN_DATA: function({ commit }, new_loan) {
-        var set_new = {
-            loan: new_loan,
-            status:false
-          };
-        commit("ADD_LOAN_MUTATION", set_new);
+    ADD_LOAN_DATA: function ({
+      commit
+    }, new_loan) {
+      var set_new = {
+        loan: new_loan
+      };
+      commit("ADD_LOAN_MUTATION", set_new);
     },
-    CLEAR_STORE: function({ commit }) {
+    ADD_INITIAL_SETUP_DATA: function ({
+      commit
+    }, data) {
+      var set_new = {
+        data: data,
+      };
+      commit("ADD_INITIAL_SETUP_MUTATION", set_new);
+    },
+    CLEAR_STORE: function ({
+      commit
+    }) {
       commit("CLEAR_STORE");
-  }
+    },
+    CLEAR_INITIAL_SETUP_DATA: function ({
+      commit
+    }) {
+      commit("CLEAR_INITIAL_SETUP_DATA");
+    }
   },
   mutations: {
-    ADD_USER_MUTATION: function(state, new_user) {
-        state.store[0].user = new_user.user;
+    ADD_USER_MUTATION: function (state, new_user) {
+      state.store[0].user = new_user.user;
     },
-    ADD_LOAN_MUTATION: function(state, new_loan) {
-        state.store[1].loan = new_loan.loan;
+    ADD_LOAN_MUTATION: function (state, new_loan) {
+      state.store[1].loan = new_loan.loan;
     },
-    CLEAR_STORE: function(state) {
+    ADD_INITIAL_SETUP_MUTATION: function (state, data) {
+      state.store[2].initial_setup_data = data;
+    },
+    CLEAR_STORE: function (state) {
       state.store = [];
+    },
+    CLEAR_INITIAL_SETUP_DATA: function (state) {
+      state.store[2].initial_setup_data = '';
     }
   },
   getters: {
@@ -56,8 +86,11 @@ const store = new Vuex.Store({
       return state.store[0].user;
     },
     loan: (state) => {
-       return state.store[1].loan;
+      return state.store[1].loan;
     },
+    initial_setup: (state) => {
+      return state.store[2].initial_setup_data;
+    }
   }
 });
 

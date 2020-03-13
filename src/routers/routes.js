@@ -1,6 +1,8 @@
+import store from '../store.js';
 export const routes = [
   //AUTHENTICATION
   {
+    name: 'sign-in',
     path: '/sign-in',
     component: () => import("@/pages/authentication/SignIn")
   },
@@ -10,16 +12,41 @@ export const routes = [
   },
   //ONBOARDING
   {
+    name: 'onboarding_1',
     path: '/onboarding/1',
-    component: () => import("@/pages/onboarding/Step1")
+    component: () => import("@/pages/onboarding/Step1"),
+    beforeEnter: (to, from, next) => {
+        if(store.state.store[0].user == ''){
+           next({path:'/sign-in'});
+        } 
+        else{
+           next();
+        } 
+    }
   },
   {
     path: '/onboarding/2',
-    component: () => import("@/pages/onboarding/Step2")
+    component: () => import("@/pages/onboarding/Step2"),
+    beforeEnter: (to, from, next) => {
+      if(store.state.store[0].user == ''){
+         next({path:'/sign-in'});
+      } 
+      else{
+         next();
+      } 
+   }
   },
   {
     path: '/onboarding/3',
-    component: () => import("@/pages/onboarding/Step3")
+    component: () => import("@/pages/onboarding/Step3"),
+    beforeEnter: (to, from, next) => {
+      if(store.state.store[0].user == ''){
+         next({path:'/sign-in'});
+      } 
+      else{
+         next();
+      } 
+    }
   },
   // DASHBOARD
   {
@@ -28,6 +55,14 @@ export const routes = [
     meta: { 
       layout: 'dashboard' ,
       headerTitle: 'Dashboard'
+    },
+    beforeEnter: (to, from, next) => {
+      if(store.state.store[0].user == ''){
+         next({path:'/sign-in'});
+      } 
+      else{
+         next();
+      } 
     }
   },
   {
@@ -45,6 +80,14 @@ export const routes = [
     meta: {
       layout: 'dashboard',
       headerTitle: 'Checkout with REACH | myAdvantage Health'
+    },
+    beforeEnter: (to, from, next) => {
+      if(store.state.store[0].user == ''){
+         next({path:'/sign-in'});
+      } 
+      else{
+         next();
+      } 
     }
   },
   {
@@ -53,6 +96,14 @@ export const routes = [
     meta: {
       layout: 'dashboard',
       headerTitle: 'Checkout with REACH | myAdvantage Health'
+    },
+    beforeEnter: (to, from, next) => {
+      if(store.state.store[0].user == ''){
+         next({path:'/sign-in'});
+      } 
+      else{
+         next();
+      } 
     }
   },
   {
@@ -61,6 +112,14 @@ export const routes = [
     meta: {
       layout: 'dashboard',
       headerTitle: 'Checkout with REACH | myAdvantage Health'
+    },
+    beforeEnter: (to, from, next) => {
+      if(store.state.store[0].user == ''){
+         next({path:'/sign-in'});
+      } 
+      else{
+         next();
+      } 
     }
   },
   {
@@ -69,6 +128,14 @@ export const routes = [
     meta: {
       layout: 'dashboard',
       headerTitle: 'Checkout with REACH | myAdvantage Health'
+    },
+    beforeEnter: (to, from, next) => {
+      if(store.state.store[0].user == ''){
+         next({path:'/sign-in'});
+      } 
+      else{
+         next();
+      } 
     }
   },
   {
@@ -77,6 +144,14 @@ export const routes = [
     meta: {
       layout: 'dashboard',
       headerTitle: 'Checkout with REACH | myAdvantage Health'
+    },
+    beforeEnter: (to, from, next) => {
+      if(store.state.store[0].user == ''){
+         next({path:'/sign-in'});
+      } 
+      else{
+         next();
+      } 
     }
   },
 
@@ -87,6 +162,14 @@ export const routes = [
     meta: { 
       layout: 'dashboard',
       headerTitle: 'Settings'
+    },
+    beforeEnter: (to, from, next) => {
+      if(store.state.store[0].user == ''){
+         next({path:'/sign-in'});
+      } 
+      else{
+         next();
+      } 
     }
   },
   {
@@ -95,6 +178,14 @@ export const routes = [
     meta: { 
       layout: 'dashboard',
       headerTitle: 'Settings'
+    },
+    beforeEnter: (to, from, next) => {
+      if(store.state.store[0].user == ''){
+         next({path:'/sign-in'});
+      } 
+      else{
+         next();
+      } 
     }
   },
   {
@@ -103,6 +194,14 @@ export const routes = [
     meta: { 
       layout: 'dashboard',
       headerTitle: 'Settings'
+    },
+    beforeEnter: (to, from, next) => {
+      if(store.state.store[0].user == ''){
+         next({path:'/sign-in'});
+      } 
+      else{
+         next();
+      } 
     }
   },
   {
@@ -111,6 +210,14 @@ export const routes = [
     meta: { 
       layout: 'dashboard',
       headerTitle: 'Settings'
+    },
+    beforeEnter: (to, from, next) => {
+      if(store.state.store[0].user == ''){
+         next({path:'/sign-in'});
+      } 
+      else{
+         next();
+      } 
     }
   },
   {
@@ -122,6 +229,14 @@ export const routes = [
       backNav: true,
       backNavTitle: 'Go Back',
       backNavUrl: '/settings/staff-location'
+    },
+    beforeEnter: (to, from, next) => {
+      if(store.state.store[0].user == ''){
+         next({path:'/sign-in'});
+      } 
+      else{
+         next();
+      } 
     }
   },
   {
@@ -133,6 +248,14 @@ export const routes = [
       backNav: true,
       backNavTitle: 'Go Back',
       backNavUrl: '/settings/staff-location'
+    },
+    beforeEnter: (to, from, next) => {
+      if(store.state.store[0].user == ''){
+         next({path:'/sign-in'});
+      } 
+      else{
+         next();
+      } 
     }
   },
   {

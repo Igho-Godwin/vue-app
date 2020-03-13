@@ -20,6 +20,11 @@
       Onboarding,
       Card
     },
+    beforeMount(){
+       if(this.$store.getters.user == "" ){
+          //window.open("/sign-in", "_self");
+       }
+    },
     mounted() {
       const scriptTag = document.createElement("script");
       scriptTag.src = "https://unpkg.com/@lottiefiles/lottie-player@latest/dist/lottie-player.js";
