@@ -35,7 +35,7 @@
       userName: String,
     },
     components: {
-      Card
+      Card,
     },
     data() {
       return {
