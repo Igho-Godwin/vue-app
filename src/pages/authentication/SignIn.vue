@@ -68,8 +68,12 @@ export default {
           if (data) {
             if (data.status == "success") {
               this.$store.dispatch("ADD_USER", data.data);
-              console.log(this.$store.getters.user.user);
-              window.open("/onboarding/1", "_self");
+              if(this.$store.getters.user.cac_business_name != null){
+                window.open("/dashboard", "_self");
+              }
+              else{
+                window.open("/onboarding/1", "_self");
+              }   
             } else {
               this.$swal(data.message);
             }
