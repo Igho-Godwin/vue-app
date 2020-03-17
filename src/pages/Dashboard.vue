@@ -51,7 +51,7 @@
             header: 'All Transactions',
             description: 'View all transactions ',
             buttonText: 'View Transactions',
-            url: '/checkout/create-trans/1',
+            url: '/transaction',
           },
           {
             icon: 'cog',
