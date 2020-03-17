@@ -9,34 +9,14 @@
           </p>
         </div>
         <div class="col-12 d-md-flex">
-          <div class="col-md-4">
+          <div class="col-md-4" v-for="content in cardContent" :key="content.icon">
             <Card>
               <div slot="card-body" class="card-body">
-                <div class="oval text-center"><img class="link-icon" src="@/assets/icons/transaction.svg"></div>
-                <h3 class="text-center">Add New Transaction</h3>
-                <p class="text-center card-text">Enter and approve new checkout transactions.</p>
-                <router-link to="/checkout/create-trans/1" class="btn btn-blue btn-block mt-5">New Transaction</router-link>
-              </div>
-            </Card>
-          </div>
-          <div class="col-md-4">
-            <Card>
-              <div slot="card-body" class="card-body">
-                <div class="oval text-center"><img class="link-icon" src="@/assets/icons/transaction.svg"></div>
-                <h3 class="text-center">All Transactions</h3>
-                <p class="text-center card-text">View all transactions </p>
-                <router-link to="/transaction" class="btn btn-blue btn-block mt-5">View Transactions</router-link>
-              </div>
-            </Card>
-          </div>
-          <div class="col-md-4">
-            <Card>
-              <div slot="card-body" class="card-body">
-                <div class="oval text-center"><img class="link-icon" src="@/assets/icons/cog.svg"></div>
-                <h3 class="text-center">Settings</h3>
-                <p class="text-center card-text">Setup or edit your bank information, organisation, staff and location.
-                </p>
-                <router-link to="/settings/checkout" class="btn btn-blue btn-block mt-5">View Settings</router-link>
+                <div class="oval text-center"><img class="link-icon"
+                    :src="require('@/assets/icons/' + content.icon + '.svg' )"></div>
+                <h3 class="text-center">{{content.header}}</h3>
+                <p class="text-center card-text">{{content.description}}</p>
+                <router-link :to="content.url" class="btn btn-blue btn-block mt-5">{{content.buttonText}}</router-link>
               </div>
             </Card>
           </div>
@@ -55,8 +35,34 @@
       userName: String,
     },
     components: {
-      Card
-    }
+      Card,
+    },
+    data() {
+      return {
+        cardContent: [{
+            icon: 'transaction',
+            header: 'Add New Transaction',
+            description: 'Enter and approve new checkout transactions.',
+            buttonText: 'New Transaction',
+            url: '/checkout/create-trans/1',
+          },
+          {
+            icon: 'transaction',
+            header: 'All Transactions',
+            description: 'View all transactions ',
+            buttonText: 'View Transactions',
+            url: '/transaction',
+          },
+          {
+            icon: 'cog',
+            header: 'Settings',
+            description: 'Setup or edit your bank information, organisation, staff and location.',
+            buttonText: 'View Settings',
+            url: '/settings/checkout',
+          },
+        ]
+      }
+    },
 
   }
 </script>
@@ -65,16 +71,17 @@
   .card-text {
     height: 2.5rem;
   }
+
   .oval {
-  width: 5rem;
-  height: 5rem;
-  background: rgba($color: #CF3E4C, $alpha: 0.1);
-  border-radius: 50%;
-  margin: 0 auto;
-  margin-bottom: 1.5rem;
-  justify-content: center;
-  align-items: center;
-  padding: 1.375rem;
+    width: 5rem;
+    height: 5rem;
+    background: rgba($color: #CF3E4C, $alpha: 0.1);
+    border-radius: 50%;
+    margin: 0 auto;
+    margin-bottom: 1.5rem;
+    justify-content: center;
+    align-items: center;
+    padding: 1.375rem;
   }
 
   .link-icon {

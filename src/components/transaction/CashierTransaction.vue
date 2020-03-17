@@ -135,7 +135,7 @@
                 }
               }
               setTimeout(function () {
-                window.open('/checkout', '_self');
+                window.open('/transaction', '_self');
               }, 10000);
               console.log('Success:', data);
             })
@@ -195,7 +195,7 @@
                     //this.$store.dispatch('CLEAR_STORE');
 
                     setTimeout(function () {
-                      window.open('/checkout', '_self');
+                      window.open('/transaction', '_self');
                     }, 3000);
 
                   }
