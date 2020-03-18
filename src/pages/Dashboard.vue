@@ -14,9 +14,9 @@
               <div slot="card-body" class="card-body">
                 <div class="oval text-center"><img class="link-icon"
                     :src="require('@/assets/icons/' + content.icon + '.svg' )"></div>
-                <h3 class="text-center">{{content.header}}</h3>
+                <h3 class="text-center card-text">{{content.header}}</h3>
                 <p class="text-center card-text">{{content.description}}</p>
-                <router-link :to="content.url" class="btn btn-blue btn-block mt-5">{{content.buttonText}}</router-link>
+                <router-link :to="content.url" class="btn btn-blue btn-block mt-5 btn-text-size">{{content.buttonText}}</router-link>
               </div>
             </Card>
           </div>
@@ -71,9 +71,12 @@
 </script>
 
 <style lang="scss" scoped>
+  @import "@/scss/abstracts/_variables.scss";
+  @import "@/scss/abstracts/_mixins.scss";
   .card-text {
-    height: 2.5rem;
+      height: 2.5rem;
   }
+
 
   .oval {
     width: 5rem;
@@ -90,5 +93,9 @@
   .link-icon {
     height: 1.5rem;
     width: 1.75rem;
+  }
+
+  .btn-text-size {
+    height: 4.625rem;
   }
 </style>
