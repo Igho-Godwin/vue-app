@@ -67,7 +67,7 @@
           this.navLinks[1].active = true
         }
         else if ( this.activeNav === "Settings" ) {
-          this.navLinks[5].active = true
+          this.navLinks[2].active = true
         }
       }
     },
