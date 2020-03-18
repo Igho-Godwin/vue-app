@@ -9,7 +9,7 @@
           </p>
         </div>
         <div class="col-12 d-md-flex">
-          <div class="col-md-4" v-for="content in cardContent" :key="content.icon">
+          <div class="col-md-4" v-for="content in cardContent" :key="content.num">
             <Card>
               <div slot="card-body" class="card-body">
                 <div class="oval text-center"><img class="link-icon"
@@ -40,6 +40,7 @@
     data() {
       return {
         cardContent: [{
+            num: 1,
             icon: 'transaction',
             header: 'Add New Transaction',
             description: 'Enter and approve new checkout transactions.',
@@ -47,6 +48,7 @@
             url: '/checkout/create-trans/1',
           },
           {
+            num: 2,
             icon: 'transaction',
             header: 'All Transactions',
             description: 'View all transactions ',
@@ -54,6 +56,7 @@
             url: '/transaction',
           },
           {
+            num: 3,
             icon: 'cog',
             header: 'Settings',
             description: 'Setup or edit your bank information, organisation, staff and location.',
