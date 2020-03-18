@@ -96,6 +96,8 @@
   }
 
   .btn-text-size {
-    height: 4.625rem;
+    @include breakpoint-max(lg){
+      height: 4.625rem;
+    }
   }
 </style>
