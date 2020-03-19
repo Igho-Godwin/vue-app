@@ -32,6 +32,11 @@
     components: {
       Card
     },
+    data(){
+        return {
+           businessLogo:this.$store.getters.user.logo_url
+        }
+    },
   }
 </script>
 

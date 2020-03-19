@@ -26,7 +26,12 @@ const store = new Vuex.Store({
       loan: ''
     }, {
       initial_setup_data: ''
-    }]
+    },{
+      business_categories:[]
+    },{
+      banks:[]
+    }
+  ]
   },
   actions: {
     ADD_USER: function ({
@@ -53,6 +58,22 @@ const store = new Vuex.Store({
       };
       commit("ADD_INITIAL_SETUP_MUTATION", set_new);
     },
+    ADD_BANK_DATA: function ({
+      commit
+    }, bankData) {
+      var set_new = {
+        bankData: bankData
+      };
+      commit("ADD_BANK_DATA_MUTATION", set_new);
+    },
+    ADD_BUSINESS_CATEGORIES: function ({
+      commit
+    }, businessCategories) {
+      var set_new = {
+        businessCategories: businessCategories
+      };
+      commit("ADD_BUSINESS_CATEGORIES_MUTATION", set_new);
+    },
     CLEAR_STORE: function ({
       commit
     }) {
@@ -74,6 +95,12 @@ const store = new Vuex.Store({
     ADD_INITIAL_SETUP_MUTATION: function (state, data) {
       state.store[2].initial_setup_data = data;
     },
+    ADD_BUSINESS_CATEGORIES_MUTATION: function (state,data){
+      state.store[3].business_categories = data.businessCategories;
+    },
+    ADD_BANK_DATA_MUTATION: function (state,data){
+      state.store[4].banks = data.bankData;
+    },
     CLEAR_STORE: function (state) {
       state.store = [];
     },
@@ -90,7 +117,13 @@ const store = new Vuex.Store({
     },
     initial_setup: (state) => {
       return state.store[2].initial_setup_data;
-    }
+    },
+    businessCategories: (state) => {
+      return state.store[3].business_categories;
+    },
+    banks: (state) => {
+      return state.store[4].banks;
+    },
   }
 });
 

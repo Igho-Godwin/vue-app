@@ -48,10 +48,38 @@ export default {
         }
     },
   methods: {
+
+    getAllCategories(){
+
+      fetch(
+        this.getGlobalUrl+"checkout/getAllBusinessCategories",
+        {
+          method: "get", // or 'PUT'
+          mode: "cors",
+          headers: {
+            "Content-Type": "application/json"
+          },
+        }
+      )
+        .then(response => response.json())
+        .then(data => {
+          if (data) {
+            if (data.status == "success") {
+               this.$store.dispatch("ADD_BUSINESS_CATEGORIES", data.data);
+            } else {
+              //this.$swal(data.message);
+            }
+          }
+          console.log("Success:", data);
+        })
+        .catch(error => {
+          console.log("Error:", error);
+        });
+  },
     submit(event) {
       event.preventDefault();
       var payload = { work_email_address:this.work_email_address, password:this.password  };
-
+      
       fetch(
         this.getGlobalUrl+"checkout/login",
         {
@@ -67,6 +95,7 @@ export default {
         .then(data => {
           if (data) {
             if (data.status == "success") {
+              data.data.access_token = data.access_token;
               this.$store.dispatch("ADD_USER", data.data);
               if(this.$store.getters.user.cac_business_name != null){
                 window.open("/dashboard", "_self");
@@ -86,7 +115,11 @@ export default {
     }
   },
   mounted(){
-       // console.log(this.getGlobalUrl);
+    if(this.$store.getters.businessCategories.length == 0)
+    {
+      this.getAllCategories();
+      console.log(3);
+    }  
   }
 };
 </script>

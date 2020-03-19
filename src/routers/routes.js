@@ -16,60 +16,76 @@ export const routes = [
     path: '/onboarding/1',
     component: () => import("@/pages/onboarding/Step1"),
     beforeEnter: (to, from, next) => {
-        if(store.state.store[0].user == ''){
-           next({path:'/sign-in'});
-        } 
-        else{
-           next();
-        } 
+      if (store.state.store[0].user == '') {
+        next({
+          path: '/sign-in'
+        });
+      } else if (store.state.store[0].user.cac_business_name != null) {
+        window.open("/dashboard", "_self");
+      } else {
+        next();
+      }
     }
   },
   {
     path: '/onboarding/2',
     component: () => import("@/pages/onboarding/Step2"),
     beforeEnter: (to, from, next) => {
-      if(store.state.store[0].user == ''){
-         next({path:'/sign-in'});
-      } 
-      else{
-         next();
-      } 
-   }
+      if (store.state.store[0].user == '') {
+        next({
+          path: '/sign-in'
+        });
+      } else if (store.state.store[0].user.cac_business_name != null) {
+        window.open("/dashboard", "_self");
+      } else {
+        next();
+      }
+    }
   },
   {
     path: '/onboarding/3',
     component: () => import("@/pages/onboarding/Step3"),
     beforeEnter: (to, from, next) => {
-      if(store.state.store[0].user == ''){
-         next({path:'/sign-in'});
-      } 
-      else{
-         next();
-      } 
+      if (store.state.store[0].user == '') {
+        next({
+          path: '/sign-in'
+        });
+      } else if (store.state.store[0].user.cac_business_name != null) {
+        window.open("/dashboard", "_self");
+      } else {
+        next();
+      }
     }
   },
   // DASHBOARD
   {
     path: '/dashboard',
     component: () => import("@/pages/Dashboard"),
-    meta: { 
-      layout: 'dashboard' ,
+    meta: {
+      layout: 'dashboard',
       headerTitle: 'Dashboard'
     },
     beforeEnter: (to, from, next) => {
-      if(store.state.store[0].user == ''){
-         next({path:'/sign-in'});
+      if (store.state.store[0].user == '') {
+        next({
+          path: '/sign-in'
+        });
       } 
-      else{
-         next();
-      } 
+      else if(store.state.store[0].user.cac_business_name == null){
+        next({
+          path: '/onboarding/1'
+        });
+      }
+      else {
+        next();
+      }
     }
   },
   {
     path: '/',
     component: () => import("@/pages/Dashboard"),
-    meta: { 
-      layout: 'dashboard' ,
+    meta: {
+      layout: 'dashboard',
       headerTitle: 'Dashboard'
     }
   },
@@ -82,13 +98,14 @@ export const routes = [
       headerTitle: 'Checkout with REACH'
     },
     beforeEnter: (to, from, next) => {
-      if(store.state.store[0].user == ''){
-         next({path:'/sign-in'});
-      } 
-      else{
-         next();
-      } 
-      
+      if (store.state.store[0].user == '') {
+        next({
+          path: '/sign-in'
+        });
+      } else {
+        next();
+      }
+
     }
   },
   {
@@ -99,13 +116,14 @@ export const routes = [
       headerTitle: 'Checkout with REACH',
     },
     beforeEnter: (to, from, next) => {
-      if(store.state.store[0].user == ''){
-         next({path:'/sign-in'});
-      } 
-      else{
-         next();
-      } 
-      
+      if (store.state.store[0].user == '') {
+        next({
+          path: '/sign-in'
+        });
+      } else {
+        next();
+      }
+
     }
   },
   {
@@ -116,13 +134,14 @@ export const routes = [
       headerTitle: 'Checkout with REACH'
     },
     beforeEnter: (to, from, next) => {
-      if(store.state.store[0].user == ''){
-         next({path:'/sign-in'});
-      } 
-      else{
-         next();
-      } 
-      
+      if (store.state.store[0].user == '') {
+        next({
+          path: '/sign-in'
+        });
+      } else {
+        next();
+      }
+
     }
   },
   {
@@ -133,13 +152,14 @@ export const routes = [
       headerTitle: 'Checkout with REACH'
     },
     beforeEnter: (to, from, next) => {
-      if(store.state.store[0].user == ''){
-         next({path:'/sign-in'});
-      } 
-      else{
-         next();
-      } 
-      
+      if (store.state.store[0].user == '') {
+        next({
+          path: '/sign-in'
+        });
+      } else {
+        next();
+      }
+
     }
   },
   {
@@ -150,12 +170,13 @@ export const routes = [
       headerTitle: 'Checkout with REACH'
     },
     beforeEnter: (to, from, next) => {
-      if(store.state.store[0].user == ''){
-         next({path:'/sign-in'});
-      } 
-      else{
-         next();
-      } 
+      if (store.state.store[0].user == '') {
+        next({
+          path: '/sign-in'
+        });
+      } else {
+        next();
+      }
 
     }
   },
@@ -164,71 +185,75 @@ export const routes = [
   {
     path: '/settings/checkout',
     component: () => import("@/pages/settings/CheckoutSetting"),
-    meta: { 
+    meta: {
       layout: 'dashboard',
       headerTitle: 'Settings'
     },
     beforeEnter: (to, from, next) => {
-      if(store.state.store[0].user == ''){
-         next({path:'/sign-in'});
-      } 
-      else{
-         next();
-      } 
+      if (store.state.store[0].user == '') {
+        next({
+          path: '/sign-in'
+        });
+      } else {
+        next();
+      }
     }
   },
   {
     path: '/settings/organisation',
     component: () => import("@/pages/settings/OrganisationSetting"),
-    meta: { 
+    meta: {
       layout: 'dashboard',
       headerTitle: 'Settings'
     },
     beforeEnter: (to, from, next) => {
-      if(store.state.store[0].user == ''){
-         next({path:'/sign-in'});
-      } 
-      else{
-         next();
-      } 
+      if (store.state.store[0].user == '') {
+        next({
+          path: '/sign-in'
+        });
+      } else {
+        next();
+      }
     }
   },
   {
     path: '/settings/account',
     component: () => import("@/pages/settings/AccountSetting"),
-    meta: { 
+    meta: {
       layout: 'dashboard',
       headerTitle: 'Settings'
     },
     beforeEnter: (to, from, next) => {
-      if(store.state.store[0].user == ''){
-         next({path:'/sign-in'});
-      } 
-      else{
-         next();
-      } 
+      if (store.state.store[0].user == '') {
+        next({
+          path: '/sign-in'
+        });
+      } else {
+        next();
+      }
     }
   },
   {
     path: '/settings/staff-location',
     component: () => import("@/pages/settings/StaffLocationSetting"),
-    meta: { 
+    meta: {
       layout: 'dashboard',
       headerTitle: 'Settings'
     },
     beforeEnter: (to, from, next) => {
-      if(store.state.store[0].user == ''){
-         next({path:'/sign-in'});
-      } 
-      else{
-         next();
-      } 
+      if (store.state.store[0].user == '') {
+        next({
+          path: '/sign-in'
+        });
+      } else {
+        next();
+      }
     }
   },
   {
     path: '/settings/add-staff',
     component: () => import("@/pages/settings/AddStaff"),
-    meta: { 
+    meta: {
       layout: 'dashboard',
       headerTitle: 'Settings',
       backNav: true,
@@ -236,18 +261,19 @@ export const routes = [
       backNavUrl: '/settings/staff-location'
     },
     beforeEnter: (to, from, next) => {
-      if(store.state.store[0].user == ''){
-         next({path:'/sign-in'});
-      } 
-      else{
-         next();
-      } 
+      if (store.state.store[0].user == '') {
+        next({
+          path: '/sign-in'
+        });
+      } else {
+        next();
+      }
     }
   },
   {
     path: '/settings/add-location',
     component: () => import("@/pages/settings/AddLocation"),
-    meta: { 
+    meta: {
       layout: 'dashboard',
       headerTitle: 'Settings',
       backNav: true,
@@ -255,12 +281,13 @@ export const routes = [
       backNavUrl: '/settings/staff-location'
     },
     beforeEnter: (to, from, next) => {
-      if(store.state.store[0].user == ''){
-         next({path:'/sign-in'});
-      } 
-      else{
-         next();
-      } 
+      if (store.state.store[0].user == '') {
+        next({
+          path: '/sign-in'
+        });
+      } else {
+        next();
+      }
     }
   },
   {

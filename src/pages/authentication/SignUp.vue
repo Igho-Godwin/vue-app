@@ -13,14 +13,8 @@
       <div class="form-group">
         <label for="businessType" class="caption">Business type</label>
         <select v-model='business_type' class="form-control text-regular" id="businessType"  >
-            <option>Select</option>
-            <option selected>Choose...</option>
-            <option value='1'>Faith &amp; Charity</option>
-            <option value='1'>Transportation</option>
-            <option value='1'>Restaurants</option>
-            <option value='1'>Entertainment</option>
-            <option value='1'>Grocery</option>
-            <option  v-for="category in allCategories" :key="category">{{category}}</option>
+            <option value='0' selected>Choose...</option>
+            <option :value='category.id'  v-for="category in allBusinessCategories" :key="category.id">{{category.name}}</option>
         </select>
       </div>
       <div class="form-group">
@@ -45,10 +39,10 @@
     data(){
         return {
               business_name: '',
-              business_type:'',
+              business_type:'0',
               work_email_address:'',
               password:'',
-              allCategories:[]
+              allBusinessCategories:[]
         }
     },
   methods: {
@@ -101,7 +95,7 @@
         .then(data => {
           if (data) {
             if (data.status == "success") {
-               //this.allCategories = data.data.plan_categories;
+               this.allBusinessCategories = data.data;
             } else {
               this.$swal(data.message);
             }

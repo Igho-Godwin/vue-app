@@ -22,5 +22,6 @@
     mounted() {
       this.$emit('headerTitle')
     }
+    
   }
 </script>

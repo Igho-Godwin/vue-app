@@ -6,7 +6,7 @@
           We recommend you use a square logo with dimensions 128px by 128px for best
           results.
         </p>
-        <form @submit="submit($event)">
+        <form>
           <my-upload
             field="img"
             @crop-success="cropSuccess"
@@ -33,14 +33,8 @@
               :src="imgDataUrl"
             />
           </div>
-          <input
-            type="text"
-            name="businessLogo"
-            id="businessLogo"
-            v-model="businessLogo"
-            style="display:none;"
-          />
-          <button type="submit" class="btn btn-blue btn-block mt-5">Save &amp; Continue</button>
+          
+          <button type="button" @click='submit()' class="btn btn-blue btn-block mt-5">Save &amp; Continue</button>
         </form>
       </div>
     </Card>
@@ -93,13 +87,12 @@
       toggleShow() {
         this.show = !this.show;
       },
-      submit(event) {
-      event.preventDefault();
-      console.log(this.$store.getters);
+      submit() {
+      let access_token = this.$store.getters.user.access_token;
       let payload = this.$store.getters.initial_setup.data;
       payload.business_id = this.$store.getters.user.id;
       payload.company_logo = this.imgDataUrl;
-      fetch(this.getGlobalUrl + "checkout/onboardingSetup", {
+      fetch(this.getGlobalUrl + "checkout/onboardingSetup?access_token="+access_token, {
         method: "post", // or 'PUT'
         mode: "cors",
         headers: {
@@ -111,7 +104,8 @@
         .then(data => {
           if (data) {
             if (data.status == "success") {
-              console.log('success');
+              data.data.access_token = access_token;
+              this.$store.dispatch("ADD_USER", data.data);
               this.$store.dispatch('CLEAR_INITIAL_SETUP_DATA');
                window.open("/dashboard", "_self");
             } else {
@@ -123,6 +117,8 @@
         .catch(error => {
           console.log("Error:", error);
         });
+
+        return false;
       },
       /**
        * crop success
@@ -158,8 +154,6 @@
         console.log('field: ' + field);
       }
     }
-
-  }
 };
 </script>
 
