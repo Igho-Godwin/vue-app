@@ -93,7 +93,7 @@
       payload.business_id = this.$store.getters.user.id;
       payload.company_logo = this.imgDataUrl;
       fetch(this.getGlobalUrl + "checkout/onboardingSetup?access_token="+access_token, {
-        method: "post", // or 'PUT'
+        method: "put", // or 'PUT'
         mode: "cors",
         headers: {
           "Content-Type": "application/json"

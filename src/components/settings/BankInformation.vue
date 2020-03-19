@@ -51,7 +51,7 @@
       let access_token = this.$store.getters.user.access_token;
       let payload = {business_id:this.$store.getters.user.id,bank_name:this.bankName,account_number:this.accountNumber,account_name:this.accountName};
       fetch(this.getGlobalUrl + "checkout/checkOutSetup?access_token="+access_token, {
-        method: "post", // or 'PUT'
+        method: "put", // or 'PUT'
         mode: "cors",
         headers: {
           "Content-Type": "application/json"
