@@ -15,12 +15,12 @@
         <span class="sidebar-nav__link-name">{{link.name}}</span>
       </a>
     </nav>
-    <button class="log-out-btn sidebar-nav__link" title="Sign Out">
+      <button class="log-out-btn sidebar-nav__link" title="Sign Out">
         <img class="sidebar-nav__link-icon" src="@/assets/icons/sign-out.svg">
         <span class="sidebar-nav__link-name">Sign Out</span> 
       </button>
-    <div class="sidebar-footer">
-      <img class="sidebar-footer__icon" src="@/assets/reach-business-logo.svg" alt="REACH for Business">
+    <div class="sidebar-footer p-3">
+      <img class="sidebar-footer__icon"  src="@/assets/reach-business-logo.svg" alt="REACH for Business">
     </div>
   </div>
 </template>
@@ -67,7 +67,7 @@
           this.navLinks[1].active = true
         }
         else if ( this.activeNav === "Settings" ) {
-          this.navLinks[5].active = true
+          this.navLinks[2].active = true
         }
       }
     },
@@ -157,6 +157,9 @@
     background: unset;
     border: unset;
     padding: .5rem .75rem;
+    @include breakpoint-max(lg){
+      padding: 1rem 1.25rem 1rem 1.625rem;
+    }
   }
 
   // DESKTOP SIDEBAR
@@ -187,18 +190,16 @@
       margin-right: .75rem;
     }
     .sidebar-footer {
-      padding-left: 1.5rem;
-      padding-right: 1.5rem;
-      display: flex;
-      padding: 1rem;
+      position: relative;
       border-top: 1px solid $smoke;
+      justify-content: center;
+      align-items: center;
+      text-align: center;
     }
 
     .sidebar-footer__icon {
       max-width: 13rem;
-      width: 100%;
-      margin: 0 auto;
+      display: block;
     }
-    
   }
 </style>

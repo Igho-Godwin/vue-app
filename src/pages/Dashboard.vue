@@ -9,14 +9,14 @@
           </p>
         </div>
         <div class="col-12 d-md-flex">
-          <div class="col-md-4" v-for="content in cardContent" :key="content.icon">
+          <div class="col-md-4" v-for="content in cardContent" :key="content.num">
             <Card>
               <div slot="card-body" class="card-body">
                 <div class="oval text-center"><img class="link-icon"
                     :src="require('@/assets/icons/' + content.icon + '.svg' )"></div>
-                <h3 class="text-center">{{content.header}}</h3>
+                <h3 class="text-center card-text">{{content.header}}</h3>
                 <p class="text-center card-text">{{content.description}}</p>
-                <router-link :to="content.url" class="btn btn-blue btn-block mt-5">{{content.buttonText}}</router-link>
+                <router-link :to="content.url" class="btn btn-blue btn-block mt-5 btn-text-size">{{content.buttonText}}</router-link>
               </div>
             </Card>
           </div>
@@ -40,6 +40,7 @@
     data() {
       return {
         cardContent: [{
+            num: 1,
             icon: 'transaction',
             header: 'Add New Transaction',
             description: 'Enter and approve new checkout transactions.',
@@ -47,6 +48,7 @@
             url: '/checkout/create-trans/1',
           },
           {
+            num: 2,
             icon: 'transaction',
             header: 'All Transactions',
             description: 'View all transactions ',
@@ -54,6 +56,7 @@
             url: '/transaction',
           },
           {
+            num: 3,
             icon: 'cog',
             header: 'Settings',
             description: 'Setup or edit your bank information, organisation, staff and location.',
@@ -70,9 +73,12 @@
 </script>
 
 <style lang="scss" scoped>
+  @import "@/scss/abstracts/_variables.scss";
+  @import "@/scss/abstracts/_mixins.scss";
   .card-text {
-    height: 2.5rem;
+      height: 2.5rem;
   }
+
 
   .oval {
     width: 5rem;
@@ -89,5 +95,11 @@
   .link-icon {
     height: 1.5rem;
     width: 1.75rem;
+  }
+
+  .btn-text-size {
+    @include breakpoint-max(lg){
+      height: 4.625rem;
+    }
   }
 </style>
