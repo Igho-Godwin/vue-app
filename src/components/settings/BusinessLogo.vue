@@ -111,6 +111,7 @@
 
 <style lang="scss">
   @import "@/scss/abstracts/_variables.scss";
+  @import "@/scss/abstracts/_mixins.scss";
 
   .logo-showcase {
     display: flex;
