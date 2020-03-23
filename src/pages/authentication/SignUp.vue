@@ -1,6 +1,7 @@
 <template>
   <Authentication title="Create your Account" authBG="bg-signup.jpg">
-    <p slot="explainer">Already have an account? <router-link to="/sign-in">Sign In</router-link></p>
+    <p slot="explainer">Already have an account? <router-link to="/sign-in">Sign In</router-link>
+    </p>
     <form @submit="submit($event)">
       <div class="form-group">
         <label for="businessName" class="caption">Business Name</label>
@@ -12,18 +13,20 @@
       </div>
       <div class="form-group">
         <label for="businessType" class="caption">Business type</label>
-        <select v-model='business_type' class="form-control text-regular" id="businessType"  >
-            <option value='0' selected>Choose...</option>
-            <option :value='category.id'  v-for="category in allBusinessCategories" :key="category.id">{{category.name}}</option>
+        <select v-model='business_type' class="form-control text-regular" id="businessType">
+          <option value='0' selected>Choose...</option>
+          <option :value='category.id' v-for="category in allBusinessCategories" :key="category.id">{{category.name}}
+          </option>
         </select>
       </div>
       <div class="form-group">
         <label for="password" class="caption">Create Password</label>
         <input type="password" class="form-control" id="password" v-model='password' required>
       </div>
-      
+
       <div class="form-group">
-        <button type="submit" class="btn-blue btn btn-block">Create My Account</button>
+        <button type="submit" class="btn-blue btn btn-block" v-on:click="handleClick()">Create My Account&nbsp;<span
+            id="spin" class="fa fa-spin"></span></button>
       </div>
     </form>
   </Authentication>
@@ -36,80 +39,92 @@
     components: {
       Authentication
     },
-    data(){
-        return {
-              business_name: '',
-              business_type:'0',
-              work_email_address:'',
-              password:'',
-              allBusinessCategories:[]
-        }
+    data() {
+      return {
+        business_name: '',
+        business_type: '0',
+        work_email_address: '',
+        password: '',
+        allBusinessCategories: []
+      }
     },
-  methods: {
-    submit(event) {
+    methods: {
 
-      event.preventDefault();
+      handleClick() {
+        var element = document.getElementById("spin");
+        element.classList.add("fa-spinner");
+        setTimeout(() => {
+          element.classList.remove("fa-spinner");
+        }, 2000)
+      },
 
-      var payload = {business_name:this.business_name, business_type:this.business_type , work_email_address:this.work_email_address , password:this.password  };
+      submit(event) {
 
-      fetch(
-        this.getGlobalUrl+"checkout/signUp",
-        {
-          method: "post", // or 'PUT'
-          mode: "cors",
-          headers: {
-            "Content-Type": "application/json"
-          },
-          body: JSON.stringify(payload)
-        }
-      )
-        .then(response => response.json())
-        .then(data => {
-          if (data) {
-            if (data.status == "success") {
-              this.$swal('Sign Up SuccessFul');
-              window.open("/sign-in", "_self");
-            } else {
-              this.$swal(data.message);
+        event.preventDefault();
+
+        var payload = {
+          business_name: this.business_name,
+          business_type: this.business_type,
+          work_email_address: this.work_email_address,
+          password: this.password
+        };
+
+        fetch(
+            this.getGlobalUrl + "checkout/signUp", {
+              method: "post", // or 'PUT'
+              mode: "cors",
+              headers: {
+                "Content-Type": "application/json"
+              },
+              body: JSON.stringify(payload)
             }
-          }
-          console.log("Success:", data);
-        })
-        .catch(error => {
-          console.log("Error:", error);
-        });
+          )
+          .then(response => response.json())
+          .then(data => {
+            if (data) {
+              if (data.status == "success") {
+                this.$swal('Sign Up SuccessFul');
+                window.open("/sign-in", "_self");
+              } else {
+                this.$swal(data.message);
+              }
+            }
+            console.log("Success:", data);
+          })
+          .catch(error => {
+            console.log("Error:", error);
+          });
+      },
+      getAllCategories() {
+
+        fetch(
+            this.getGlobalUrl + "checkout/getAllBusinessCategories", {
+              method: "get", // or 'PUT'
+              mode: "cors",
+              headers: {
+                "Content-Type": "application/json"
+              },
+            }
+          )
+          .then(response => response.json())
+          .then(data => {
+            if (data) {
+              if (data.status == "success") {
+                this.allBusinessCategories = data.data;
+              } else {
+                this.$swal(data.message);
+              }
+            }
+            console.log("Success:", data);
+          })
+          .catch(error => {
+            console.log("Error:", error);
+          });
+      }
     },
-    getAllCategories(){
-
-      fetch(
-        this.getGlobalUrl+"checkout/getAllBusinessCategories",
-        {
-          method: "get", // or 'PUT'
-          mode: "cors",
-          headers: {
-            "Content-Type": "application/json"
-          },
-        }
-      )
-        .then(response => response.json())
-        .then(data => {
-          if (data) {
-            if (data.status == "success") {
-               this.allBusinessCategories = data.data;
-            } else {
-              this.$swal(data.message);
-            }
-          }
-          console.log("Success:", data);
-        })
-        .catch(error => {
-          console.log("Error:", error);
-        });
-  }
-},
-mounted(){
-    this.getAllCategories();
-},
+    mounted() {
+      this.getAllCategories();
+    },
 
 
   }
