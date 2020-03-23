@@ -55,7 +55,7 @@
         element.classList.add("fa-spinner");
         setTimeout(() => {
           element.classList.remove("fa-spinner");
-        }, 1000)
+        }, 2000)
       },
 
       submit(event) {
