@@ -2,7 +2,7 @@
 export default {
     computed: {
       getGlobalUrl() {
-        return 'http://localhost:93/v1/';
+        return 'https://staging.mybank.ng/v1/';
       }
     }
   };
