@@ -30,6 +30,10 @@ const store = new Vuex.Store({
       business_categories:[]
     },{
       banks:[]
+    },{
+      business_stores: []
+    },{
+      businessStaff: []
     }
   ]
   },
@@ -74,6 +78,22 @@ const store = new Vuex.Store({
       };
       commit("ADD_BUSINESS_CATEGORIES_MUTATION", set_new);
     },
+    ADD_BUSINESS_STORE: function ({
+      commit
+    }, businessStore) {
+      var set_new = {
+        businessStore: businessStore
+      };
+      commit("ADD_BUSINESS_STORE_MUTATION", set_new);
+    },
+    ADD_BUSINESS_STAFF: function ({
+      commit
+    }, businessStaff) {
+      var set_new = {
+        businessStaff: businessStaff
+      };
+      commit("ADD_BUSINESS_STAFF_MUTATION", set_new);
+    },
     CLEAR_STORE: function ({
       commit
     }) {
@@ -101,6 +121,12 @@ const store = new Vuex.Store({
     ADD_BANK_DATA_MUTATION: function (state,data){
       state.store[4].banks = data.bankData;
     },
+    ADD_BUSINESS_STORE_MUTATION: function (state,data){
+      state.store[5].business_stores.push(data.businessStore);
+    },
+    ADD_BUSINESS_STAFF_MUTATION: function (state,data){
+      state.store[6].businessStaff.push(data.businessStaff);
+    },
     CLEAR_STORE: function (state) {
       state.store = [];
     },
@@ -120,6 +146,9 @@ const store = new Vuex.Store({
     },
     businessCategories: (state) => {
       return state.store[3].business_categories;
+    },
+    businessStores: (state) => {
+      return state.store[5].business_stores;
     },
     banks: (state) => {
       return state.store[4].banks;
