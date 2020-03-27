@@ -17,12 +17,12 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="staff in staffs" :key="staff.name">
-              <td><p>{{staff.name}}</p></td>
-              <td><p>{{staff.location}}</p></td>
+            <tr v-for="person in staff" :key="person.id">
+              <td><p>{{person.first_name}}</p></td>
+              <td><p>{{person.location}}</p></td>
               <td><p>
-                <a href="#">Edit&nbsp;</a>
-                <a href="#" class="text-red">&nbsp;Delete</a>
+                <a href="#" @click='editStaff(person)'>Edit&nbsp;</a>
+                <a href="#" class="text-red" @click='deleteStaff(person.id)' >&nbsp;Delete</a>
               </p></td>
             </tr>
           </tbody>
@@ -40,16 +40,70 @@
     },
      data() {
       return {
-        staffs: [{
-            name: 'Mary',
-            location: 'Ikoyi',
-          },
-          {
-            name: 'Jide',
-            location: 'Abuja',
-          }
-      ]
+        staff: []
      }
+  },
+  methods:{
+    deleteStaff(staffId){
+        fetch(
+        this.getGlobalUrl+"checkout/staff/"+staffId+'?access_token='+this.$store.getters.user.access_token,
+        {
+          method: "delete", // or 'PUT'
+          mode: "cors",
+          headers: {
+            "Content-Type": "application/json"
+          }
+        }
+      )
+        .then(response => response.json())
+        .then(data => {
+          if (data) {
+            if (data.status == "success") {
+               this.$swal(data.data);
+               location.reload();
+            }
+          }
+        })
+        .catch(error => {
+          console.log("Error:", error);
+        });
+
+    },
+    editStaff(){
+       //this.$store.dispatch("ADD_EDIT_STAFF", person);
+       //window.open('/settings/add-staff?edit=1');
+    },
+    getAllStaff(){
+      fetch(
+        this.getGlobalUrl+"checkout/getStaff/"+this.$store.getters.user.id+'?access_token='+this.$store.getters.user.access_token,
+        {
+          method: "get", // or 'PUT'
+          mode: "cors",
+          headers: {
+            "Content-Type": "application/json"
+          }
+        }
+      )
+        .then(response => response.json())
+        .then(data => {
+          if (data) {
+            if (data.status == "success") {
+              this.$store.dispatch("ADD_BUSINESS_STAFF", data.data);
+              this.staff =data.data;   
+            } else {
+              //this.$swal(data.message);
+            }
+          }
+          //console.log("Success:", data);
+        })
+        .catch(error => {
+          console.log("Error:", error);
+        });
+  
+  }
+  },
+  mounted(){
+    this.getAllStaff();
   },
   props: [
       'name', 'location', 'address'

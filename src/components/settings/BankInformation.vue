@@ -77,7 +77,7 @@
       },
       getAllBanks(){
        
-          if(typeof this.$store.getters.banks == 'undefined'){
+          if(this.$store.getters.banks.length == 0){
       let access_token = this.$store.getters.user.access_token;
       fetch(
         this.getGlobalUrl+"banks/getByCountryId?country_id=1&access_token="+access_token,

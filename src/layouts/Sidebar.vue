@@ -15,7 +15,7 @@
         <span class="sidebar-nav__link-name">{{link.name}}</span>
       </a>
     </nav>
-      <button class="log-out-btn sidebar-nav__link" title="Sign Out">
+      <button class="log-out-btn sidebar-nav__link" title="Sign Out" @click='signOut()'>
         <img class="sidebar-nav__link-icon" src="@/assets/icons/sign-out.svg">
         <span class="sidebar-nav__link-name">Sign Out</span> 
       </button>
@@ -59,6 +59,10 @@
       activeNav: String
     },
     methods: {
+      signOut(){
+          this.$store.dispatch("CLEAR_STORE");
+          window.open('/sign-in');
+      },
       updateActiveNavClass() {
         if ( this.activeNav === "Dashboard" ) {
           this.navLinks[0].active = true

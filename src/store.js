@@ -35,6 +35,9 @@ const store = new Vuex.Store({
     },{
       businessStaff: []
     }
+    ,{
+      currentEditedStaff: ''
+    }
   ]
   },
   actions: {
@@ -94,6 +97,14 @@ const store = new Vuex.Store({
       };
       commit("ADD_BUSINESS_STAFF_MUTATION", set_new);
     },
+    ADD_EDIT_STAFF: function ({
+      commit
+    }, staff) {
+      var set_new = {
+        staff: staff
+      };
+      commit("ADD_EDIT_STAFF_MUTATION", set_new);
+    },
     CLEAR_STORE: function ({
       commit
     }) {
@@ -125,10 +136,21 @@ const store = new Vuex.Store({
       state.store[5].business_stores.push(data.businessStore);
     },
     ADD_BUSINESS_STAFF_MUTATION: function (state,data){
-      state.store[6].businessStaff.push(data.businessStaff);
+      state.store[6].businessStaff = data.businessStaff;
+    },
+    ADD_EDIT_STAFF_MUTATION: function (state,data){
+      state.store[7].currentEditedStaff = data.staff;
     },
     CLEAR_STORE: function (state) {
-      state.store = [];
+
+      state.store.user = '';
+      state.store.loan = '';
+      state.store.initial_setup_data = '';
+      state.store.business_categories = [];
+      state.store.banks = [];
+      state.store.business_stores = [];
+      state.store.businessStaff = [];
+
     },
     CLEAR_INITIAL_SETUP_DATA: function (state) {
       state.store[2].initial_setup_data = '';
@@ -149,6 +171,12 @@ const store = new Vuex.Store({
     },
     businessStores: (state) => {
       return state.store[5].business_stores;
+    },
+    businessStaff: (state) => {
+      return state.store[6].businessStaff;
+    },
+    currentEditedStaff: (state) => {
+      return state.store[7].currentEditedStaff;
     },
     banks: (state) => {
       return state.store[4].banks;

@@ -56,8 +56,8 @@
         business_id: this.$store.getters.user.id,
         first_name: this.firstName,
         last_name: this.lastName,
-        email: this.email,
-        location: this.location,
+        work_email_address: this.email,
+        location_assigned_to: this.location,
         password: this.password
       };
 
@@ -74,7 +74,6 @@
         .then(data => {
           if (data) {
             if (data.status == "success") {
-              this.$store.dispatch("ADD_BUSINESS_STAFF",payload);
               payload = {};
               document.getElementById("add_staff_form").reset();
               this.$swal('Save Successful'); 
