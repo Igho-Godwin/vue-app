@@ -93,7 +93,7 @@
               if (data.status == "success") {
                 data.data.access_token = data.access_token;
                 this.$store.dispatch("ADD_USER", data.data);
-                if (this.$store.getters.user.cac_business_name != null) {
+                if (this.$store.getters.user.cac_business_name != null || typeof this.$store.getters.user.cac_business_name == 'undefined' ) {
                   window.open("/dashboard", "_self");
                 } else {
                   window.open("/onboarding/1", "_self");

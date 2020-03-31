@@ -16,7 +16,7 @@ export const routes = [
     path: '/onboarding/1',
     component: () => import("@/pages/onboarding/Step1"),
     beforeEnter: (to, from, next) => {
-      if (store.state.store[0].user == '') {
+      if (store.state.store[0].user == '' || typeof store.state.store[0].user.business_id != 'undefined') {
         next({
           path: '/sign-in'
         });
@@ -31,7 +31,7 @@ export const routes = [
     path: '/onboarding/2',
     component: () => import("@/pages/onboarding/Step2"),
     beforeEnter: (to, from, next) => {
-      if (store.state.store[0].user == '') {
+      if (store.state.store[0].user == '' || typeof store.state.store[0].user.business_id != 'undefined') {
         next({
           path: '/sign-in'
         });
@@ -46,7 +46,7 @@ export const routes = [
     path: '/onboarding/3',
     component: () => import("@/pages/onboarding/Step3"),
     beforeEnter: (to, from, next) => {
-      if (store.state.store[0].user == '') {
+      if (store.state.store[0].user == '' || typeof store.state.store[0].user.business_id != 'undefined') {
         next({
           path: '/sign-in'
         });
@@ -71,7 +71,7 @@ export const routes = [
           path: '/sign-in'
         });
       } 
-      else if(store.state.store[0].user.cac_business_name == null){
+      else if(store.state.store[0].user.cac_business_name == null && typeof store.state.store[0].user.business_id == 'undefined' ){
         next({
           path: '/onboarding/1'
         });

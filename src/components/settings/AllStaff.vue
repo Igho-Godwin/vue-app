@@ -46,7 +46,7 @@
   methods:{
     deleteStaff(staffId){
         fetch(
-        this.getGlobalUrl+"checkout/staff/"+staffId+'?access_token='+this.$store.getters.user.access_token,
+        this.getGlobalUrl+"checkout/staff/delete/"+staffId+'?access_token='+this.$store.getters.user.access_token,
         {
           method: "delete", // or 'PUT'
           mode: "cors",

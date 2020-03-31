@@ -17,12 +17,12 @@
             </tr>
           </thead>
           <tbody>
-            <tr v-for="staff in staffs" :key="staff.name">
-              <td><p>{{staff.name}}</p></td>
-              <td><p>{{staff.address}}</p></td>
+            <tr v-for="location in locations" :key="location.id">
+              <td><p>{{location.store_name}}</p></td>
+              <td><p>{{location.location}}</p></td>
               <td><p>
                   <a href="#">Edit&nbsp;</a>
-                  <a href="#" class="text-red">&nbsp;Delete</a>    
+                  <a href="#" class="text-red" @click='deleteLocation(location.id)'>&nbsp;Delete</a>    
               </p></td>
             </tr>
           </tbody>
@@ -40,13 +40,67 @@
     },
      data() {
       return {
-        staffs: [{
-            name: 'Mary',
-            address: 'Ajah',
-          },
-      ]
+        locations: []
      }
   },
+  methods:{
+    deleteLocation(locationId){
+        fetch(
+        this.getGlobalUrl+"checkout/location/delete/"+locationId+'?access_token='+this.$store.getters.user.access_token,
+        {
+          method: "delete", // or 'PUT'
+          mode: "cors",
+          headers: {
+            "Content-Type": "application/json"
+          }
+        }
+      )
+        .then(response => response.json())
+        .then(data => {
+          if (data) {
+            if (data.status == "success") {
+               this.$swal(data.data);
+               location.reload();
+            }
+          }
+        })
+        .catch(error => {
+          console.log("Error:", error);
+        });
+
+    },
+    editLocation(){
+       //this.$store.dispatch("ADD_EDIT_STAFF", person);
+       //window.open('/settings/add-staff?edit=1');
+    },
+    getLocations(){
+      fetch(
+        this.getGlobalUrl+"checkout/getLocations/"+this.$store.getters.user.id+'?access_token='+this.$store.getters.user.access_token,
+        {
+          method: "get", // or 'PUT'
+          mode: "cors",
+          headers: {
+            "Content-Type": "application/json"
+          }
+        }
+      )
+        .then(response => response.json())
+        .then(data => {
+          if (data) {
+            if (data.status == "success") {
+              this.locations = data.data;   
+            } 
+          }
+        })
+        .catch(error => {
+          console.log("Error:", error);
+        });
+    }
+
+  },
+  mounted(){
+    this.getLocations();
+  }, 
   props: [
       'name', 'address'
     ]
