@@ -1,5 +1,8 @@
 import store from '../store.js';
 export const routes = [
+  {
+    path:'*', component: () => import("@/pages/authentication/SignIn")
+  },
   //AUTHENTICATION
   {
     name: 'sign-in',
